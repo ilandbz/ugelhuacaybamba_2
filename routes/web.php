@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\NoticiaController;
-
+use App\Http\Controllers\IntranetController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,4 +28,8 @@ Route::controller(NoticiaController::class)->group(function(){
     Route::get('noticias', 'index');
     Route::get('noticias/create', 'create');
     Route::get('noticias/{menu}', 'show');
+});
+
+Route::controller(IntranetController::class)->group(function(){
+    Route::get('intranet', 'index')->name('intr');
 });
