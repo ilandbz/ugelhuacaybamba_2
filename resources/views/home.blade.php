@@ -14,18 +14,13 @@
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
               </div>
               <div class="carousel-inner">
-                  <div class="carousel-item active">
-                  <img src="img/slider/1.jpg" class="d-block w-100" alt="...">
+                {{ $estado=false; }}
+                @foreach($sliders as $row)
+                  <div class="carousel-item {{ $estado==false ? 'active' : '' }}">
+                  <img src="img/slider/{{ $row->img_slider }}" class="d-block w-100" alt="...">
                   </div>
-                  <div class="carousel-item">
-                  <img src="img/slider/2.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                  <img src="img/slider/3.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                  <img src="img/slider/4.jpg" class="d-block w-100" alt="...">
-                  </div>                
+                {{$estado = true}}
+                @endforeach
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>

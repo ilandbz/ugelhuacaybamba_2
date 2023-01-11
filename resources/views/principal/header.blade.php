@@ -14,7 +14,7 @@
             <li class="dropdown"><a href="#"><span><?= $row->nom_menu ?></span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                 <?php foreach($submenus as $submenu){
-                  if($submenu->idmenus==$row->idmenus){ ?>
+                  if($submenu->idmenus==$row->id){ ?>
                     <li><a href="<?= $submenu->link_submenu ?>"><?= $submenu->nom_submenu ?></a></li>
                 <?php } } ?>
                 </ul>
