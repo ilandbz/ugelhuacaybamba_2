@@ -1,117 +1,115 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
-    <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
-                    </a>
+        <!-- ########## START: LEFT PANEL ########## -->
+        <div class="br-logo"><a href=""><span>[</span>Huaca. <i>UGEL</i><span>]</span></a></div>
+        <div class="br-sideleft sideleft-scrollbar">
+        <label class="sidebar-label pd-x-10 mg-t-20 op-3">Navigation</label>
+        <ul class="br-sideleft-menu">
+            <li class="br-menu-item">
+            <a href="{{route('intranet')}}" class="br-menu-link active">
+                <i class="menu-item-icon icon ion-ios-home-outline tx-24"></i>
+                <span class="menu-item-label">Home</span>
+            </a><!-- br-menu-link -->
+            </li><!-- br-menu-item -->
+            <li class="br-menu-item">
+                <a href="{{route('home')}}" class="br-menu-link">
+                  <i class="menu-item-icon icon ion-ios-color-filter-outline tx-24"></i>
+                  <span class="menu-item-label">Portal</span>
+                </a><!-- br-menu-link -->
+            </li>
+            <li class="br-menu-item">
+            <a href="{{route('archivo')}}" class="br-menu-link">
+                <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>
+                <span class="menu-item-label">Archivos</span>
+            </a><!-- br-menu-link -->
+            </li><!-- br-menu-item -->
+            <li class="br-menu-item">
+            <a href="#" class="br-menu-link with-sub">
+                <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i>
+                <span class="menu-item-label">Menu</span>
+            </a><!-- br-menu-link -->
+            <ul class="br-menu-sub">
+                <li class="sub-item"><a href="{{route('formregistro')}}" class="sub-link">Registrar</a></li>
+            </ul>
+            </li>
+            <li class="br-menu-item">
+            <a href="#" class="br-menu-link with-sub">
+                <i class="menu-item-icon ion-ios-redo-outline tx-24"></i>
+                <span class="menu-item-label">Slider</span>
+            </a><!-- br-menu-link -->
+            <ul class="br-menu-sub">
+                <li class="sub-item"><a href="{{route('slide.create')}}" class="sub-link">Registrar</a></li>
+            </ul>
+            </li><!-- br-menu-item -->
+            <li class="br-menu-item">
+            <a href="#" class="br-menu-link with-sub">
+                <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i>
+                <span class="menu-item-label">Convocatorias</span>
+            </a><!-- br-menu-link -->
+            <ul class="br-menu-sub nav flex-column">
+                <li class="sub-item"><a href="table-basic.html" class="sub-link">Basic Table</a></li>
+                <li class="sub-item"><a href="table-datatable.html" class="sub-link">Data Table</a></li>
+            </ul>
+            </li><!-- br-menu-item -->
+            <li class="br-menu-item">
+            <a href="#" class="br-menu-link with-sub">
+                <i class="menu-item-icon icon ion-ios-briefcase-outline tx-22"></i>
+                <span class="menu-item-label">Directorio</span>
+            </a><!-- br-menu-link -->
+            <ul class="br-menu-sub">
+                <li class="sub-item"><a href="background.html" class="sub-link">Background</a></li>
+                <li class="sub-item"><a href="border.html" class="sub-link">Border</a></li>
+                <li class="sub-item"><a href="height.html" class="sub-link">Height</a></li>
+                <li class="sub-item"><a href="margin.html" class="sub-link">Margin</a></li>
+                <li class="sub-item"><a href="padding.html" class="sub-link">Padding</a></li>
+                <li class="sub-item"><a href="position.html" class="sub-link">Position</a></li>
+                <li class="sub-item"><a href="typography-util.html" class="sub-link">Typography</a></li>
+                <li class="sub-item"><a href="width.html" class="sub-link">Width</a></li>
+            </ul>
+            </li><!-- br-menu-item -->
+            <li class="br-menu-item">
+            <a href="pages.html" class="br-menu-link">
+                <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
+                <span class="menu-item-label">Noticias</span>
+            </a><!-- br-menu-link -->
+            </li><!-- br-menu-item -->
+        </ul><!-- br-sideleft-menu -->
+        <br>
+        </div><!-- br-sideleft -->
+        <!-- ########## END: LEFT PANEL ########## -->
+        <!-- ########## START: HEAD PANEL ########## -->
+        <div class="br-header">
+        <div class="br-header-left">
+            <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href=""><i class="icon ion-navicon-round"></i></a></div>
+            <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href=""><i class="icon ion-navicon-round"></i></a></div>
+        </div><!-- br-header-left -->
+        <div class="br-header-right">
+            <nav class="nav">
+            <div class="dropdown">
+                <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
+                <span class="logged-name hidden-md-down">{{ Auth::user()->name }}</span>
+                <img src="{{ asset('img/avatar.png') }}" class="wd-32 rounded-circle" alt="">
+                <span class="square-10 bg-success"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-header wd-250">
+                <div class="tx-center">
+                    <p>GESTOR</p>
                 </div>
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Intranet') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('menu')" :active="request()->routeIs('menu') || request()->routeIs('menu.*')">
-                        {{ __('Menu') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('slider')" :active="request()->routeIs('slider')">
-                        {{ __('slider') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('noticia')" :active="request()->routeIs('noticia')">
-                        {{ __('Noticia') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('noticia')" :active="request()->routeIs('archivo')">
-                        {{ __('Archivo') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('noticia')" :active="request()->routeIs('convocatorias')">
-                        {{ __('Convocatorias') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('noticia')" :active="request()->routeIs('Directorio')">
-                        {{ __('Directorio') }}
-                    </x-nav-link>                    
-                    
-                </div>
-            </div>
-            <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <x-dropdown align="right" width="48">
-                    <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->name }}</div>
+                <hr>
 
-                            <div class="ml-1">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                        </button>
-                    </x-slot>
-
-                    <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Perfil') }}
-                        </x-dropdown-link>
-
-                        <!-- Authentication -->
+                <hr>
+                <ul class="list-unstyled user-profile-nav">
+                    <li><a href="{{route('profile.edit')}}"><i class="icon ion-ios-person"></i> Editar Perfil</a></li>
+                    <li>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
+                            <a href="{{route('logout')}}" onclick="event.preventDefault();
+                            this.closest('form').submit();"><i class="icon ion-power"></i> {{ __('Cerrar Session') }}</a>
+                        </form>                    
+                    </li>
 
-                            <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Salir') }}
-                            </x-dropdown-link>
-                        </form>
-                    </x-slot>
-                </x-dropdown>
-            </div>
-
-            <!-- Hamburger -->
-            <div class="-mr-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-        </div>
-
-        <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
-                <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-            </div>
-
-            <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
-                </x-responsive-nav-link>
-
-                <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                        {{ __('Log Out') }}
-                    </x-responsive-nav-link>
-                </form>
-            </div>
-        </div>
-    </div>
-</nav>
+                </ul>
+                </div><!-- dropdown-menu -->
+            </div><!-- dropdown -->
+            </nav>
+        </div><!-- br-header-right -->
+        </div><!-- br-header -->
+        <!-- ########## END: HEAD PANEL ########## -->

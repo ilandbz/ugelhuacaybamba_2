@@ -1,14 +1,12 @@
 <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Profile Information') }}
+            {{ __('Informacion de Perfil') }}
         </h2>
-
         <p class="mt-1 text-sm text-gray-600">
-            {{ __("Update your account's profile information and email address.") }}
+            {{ __("Actualiza tu informacion de cuenta y direccion email.") }}
         </p>
     </header>
-
     <form id="send-verification" method="post" action="{{ route('verification.send') }}">
         @csrf
     </form>
@@ -17,17 +15,23 @@
         @csrf
         @method('patch')
 
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
+
+        <div class="row mg-b-25">
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label class="form-control-label" for="name">Nombre: <span class="tx-danger">*</span></label>
+                    <input class="form-control" type="text" name="name" id="name" value="{{old('name', $user->name)}}" placeholder="Name">
+                    <x-input-error class="mt-2" :messages="$errors->get('name')" />
+                </div>
+            </div><!-- col-4 -->
+            <div class="col-lg-8">
+              <div class="form-group">
+                <label class="form-control-label" for="email">Email: <span class="tx-danger">*</span></label>
+                <input class="form-control" type="text" name="email" id="email" value="{{old('email', $user->email)}}" placeholder="Enter email address">
+              </div>
+            </div><!-- col-4 -->
         </div>
-
         <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="email" />
-            <x-input-error class="mt-2" :messages="$errors->get('email')" />
-
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
                 <div>
                     <p class="text-sm mt-2 text-gray-800">
