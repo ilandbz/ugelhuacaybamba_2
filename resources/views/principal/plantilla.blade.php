@@ -28,6 +28,8 @@
   <!-- Template Main CSS File -->
   <link href="{{ asset('plantillas/Sailor/assets/css/style.css') }}" rel="stylesheet">
 
+  <!-- Fontawesome -->
+  <link href="{{ asset('fontawesome/css/all.min.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -36,6 +38,7 @@
   @include('principal.footer')
 
   <!-- Vendor JS Files -->
+  <script src="{{asset('plantillas/bracketplus/app/lib/jquery/jquery.min.js')}}"></script>
   <script src="{{ asset('plantillas/Sailor/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{ asset('plantillas/Sailor/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
   <script src="{{ asset('plantillas/Sailor/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
@@ -44,5 +47,11 @@
   <script src="{{ asset('plantillas/Sailor/assets/vendor/php-email-form/validate.js')}}"></script>
   <!-- Template Main JS File -->
   <script src="{{ asset('plantillas/Sailor/assets/js/main.js')}}"></script>
+  <script>
+
+    $(document).ready(function(){
+      $('#modalpopup').modal('show');       
+    })
+  </script>
 </body>
 </html>

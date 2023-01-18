@@ -88,8 +88,19 @@
                     $('input[name=activo_menu]').val('1'); 
                 }
                 $(this).toggleClass('on');
-            })      
+            })  
+            $('#br-toggle3').on('click', function(e){
+                e.preventDefault();
+                if($('input[name=estado]').val()=='1'){
+                    $('input[name=estado]').val('0'); 
+                }else{
+                    $('input[name=estado]').val('1'); 
+                }
+                $(this).toggleClass('on');
+            })              
+            
             });
+            
           </script>
         <script>
             $(document).ready(function(){
@@ -106,7 +117,39 @@
                         reader.readAsDataURL(input.files[0]);
                     }
                 })
+                $("#inputGroupFile1").on('change',function(){
+                var input = $(this)[0];
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#preview1').attr('src', e.target.result).fadeIn('slow');
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+                })
+                $("#inputGroupFile2").on('change',function(){
+                var input = $(this)[0];
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#preview2').attr('src', e.target.result).fadeIn('slow');
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+                })
+                $("#inputGroupFile3").on('change',function(){
+                var input = $(this)[0];
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#preview3').attr('src', e.target.result).fadeIn('slow');
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+                })          
             })
         </script>
+
+      
     </body>
 </html>

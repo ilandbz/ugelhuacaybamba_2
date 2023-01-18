@@ -45,13 +45,14 @@ class SliderController extends Controller
         $slider->descripcioncorta=$request->descripcioncorta;
         if($request->hasFile('img_slider')){
             $file = $request->file('img_slider');
+            $image_path = public_path('img/slider/').$slider->img_slider;              
             $filename = substr($slider->img_slider, 0, -4).'.'.$file->extension();
             $slider->img_slider=$filename;
-            $image_path = public_path('img/slider/').$slider->img_slider;        
+      
             if (file_exists($image_path)){
                 unlink($image_path);
             }
-            $file->move(public_path('img/slider'), $filename);    
+            $file->move(public_path('img/slider'), $filename); 
         }
         $slider->save();
         return redirect()->route('slide.edit', $slider);        

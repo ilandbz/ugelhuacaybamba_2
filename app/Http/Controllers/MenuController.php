@@ -10,8 +10,8 @@ use App\Models\Pagina;
 class MenuController extends Controller
 {
     public function index(){
-        $data['menus']=Menu::paginate(10);
-        return view('intranet/menu', $data); 
+        // $data['menus']=Menu::paginate(10);
+        // return view('intranet/menu', $data); 
     }
     public function create(){
         $data['menus']=Menu::paginate(4);        

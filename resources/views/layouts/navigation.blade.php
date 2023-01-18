@@ -55,21 +55,29 @@
                 <span class="menu-item-label">Directorio</span>
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub">
-                <li class="sub-item"><a href="background.html" class="sub-link">Background</a></li>
-                <li class="sub-item"><a href="border.html" class="sub-link">Border</a></li>
-                <li class="sub-item"><a href="height.html" class="sub-link">Height</a></li>
-                <li class="sub-item"><a href="margin.html" class="sub-link">Margin</a></li>
-                <li class="sub-item"><a href="padding.html" class="sub-link">Padding</a></li>
-                <li class="sub-item"><a href="position.html" class="sub-link">Position</a></li>
-                <li class="sub-item"><a href="typography-util.html" class="sub-link">Typography</a></li>
-                <li class="sub-item"><a href="width.html" class="sub-link">Width</a></li>
+                <li class="sub-item"><a href="{{route('directorio.create')}}" class="sub-link">Registrar</a></li>
+                <li class="sub-item"><a href="{{route('directorio')}}" class="sub-link">Administrar</a></li>
             </ul>
             </li><!-- br-menu-item -->
             <li class="br-menu-item">
-            <a href="pages.html" class="br-menu-link">
+            <a href="#" class="br-menu-link with-sub">
                 <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
                 <span class="menu-item-label">Noticias</span>
             </a><!-- br-menu-link -->
+            <ul class="br-menu-sub nav flex-column">
+                <li class="sub-item"><a href="{{route('noticias')}}" class="sub-link">Administrar</a></li>
+                <li class="sub-item"><a href="{{route('noticias.create')}}" class="sub-link">Nueva</a></li>
+            </ul>
+            </li><!-- br-menu-item -->
+            <li class="br-menu-item">
+                <a href="#" class="br-menu-link with-sub">
+                    <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i>
+                    <span class="menu-item-label">Popup</span>
+                </a><!-- br-menu-link -->
+                <ul class="br-menu-sub nav flex-column">
+                    <li class="sub-item"><a href="{{route('popup')}}" class="sub-link">Administrar</a></li>
+                    <li class="sub-item"><a href="{{route('popup.create')}}" class="sub-link">Nueva</a></li>
+                </ul>
             </li><!-- br-menu-item -->
         </ul><!-- br-sideleft-menu -->
         <br>
@@ -90,9 +98,6 @@
                 <span class="square-10 bg-success"></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-header wd-250">
-                <div class="tx-center">
-                    <p>GESTOR</p>
-                </div>
                 <hr>
 
                 <hr>

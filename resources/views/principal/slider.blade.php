@@ -3,7 +3,7 @@
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
       <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
       <div class="carousel-inner" role="listbox">
-        {{ $estado=false; }}
+        <?php $estado=false; ?>
         @foreach($sliders as $row)
           <div class="carousel-item {{ $estado==false ? 'active' : '' }}" style="background-image: url(img/slider/{{ $row->img_slider }})">
             <div class="carousel-container">
@@ -14,7 +14,7 @@
               </div>
             </div>
           </div>
-        {{$estado = true}}
+        <?php $estado = true ?>
         @endforeach
       </div>
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">

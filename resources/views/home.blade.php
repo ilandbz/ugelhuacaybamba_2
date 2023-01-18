@@ -1,69 +1,77 @@
 @extends('principal.plantilla')
 @section('title', 'UGEL - HUACAYBAMBA')
 @section('content')
-@extends('principal.slider')
+<section id="hero">
+  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+    <div class="carousel-inner" role="listbox">
+      <?php $estado=false; ?>
+      @foreach($sliders as $row)
+        <div class="carousel-item {{ $estado==false ? 'active' : '' }}" style="background-image: url(img/slider/{{ $row->img_slider }})">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">{{$row->titulo}}</span></h2>
+              <p class="animate__animated animate__fadeInUp">{{$row->descripcioncorta}}</p>
+              {{-- <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Leer Mas</a> --}}
+            </div>
+          </div>
+        </div>
+      <?php $estado = true ?>
+      @endforeach
+    </div>
+    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+    </a>
+  </div>
+</section><!-- End Hero -->
+<section class="bg-primary p-2">
+  <div class="container">
+    <div class="row content">
+      <div class="col">
+        <a href="" class="btn btn-light">
+          <i class="fa-solid fa-desktop"></i> Mesa de Partes 
+        </a>
+       
+      </div>
+      <div class="col">
+          <button class="btn btn-light">Telefono <i data-v-430fa5ae="" class="fa fa-phone-volume"></i> 936451334</button>
+      </div>
+      <div class="col">
+        <a href="" class="btn btn-light">
+          <i class="fa-regular fa-envelope"></i> Correo Institucional
+        </a>
+      </div>
+      <div class="col">
+        <a href="" class="btn btn-light"><img data-v-430fa5ae="" src="{{asset('img/otros/portal.png')}}" alt="" height="30"></a>
+      </div>
+    </div>
+  </div>
+  
+</section>
   <main id="main">
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
       <div class="container">
         <div class="row content">
           <div class="col-lg-6">
-            <h2>Eum ipsam laborum deleniti velitena</h2>
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
+            <h2>Noticias</h2>
+            <h3>{{$noticia->titulo}}</h3>
+            <p><a href="{{route('noticia', $noticia->id)}}">Ver Mas</a></p>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
+              {{$noticia->descripcioncorta}}
             </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in</li>
-            </ul>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              <img src="{{asset('img/noticias/'.$noticia->img1)}}" class="img-fluid img-thumbnail" />
             </p>
           </div>
         </div>
       </div>
     </section><!-- End About Section -->
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients section-bg">
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="{{ asset('plantillas/Sailor/assets/img/clients/client-1.png') }}" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="{{ asset('plantillas/Sailor/assets/img/clients/client-2.png') }}" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="{{ asset('plantillas/Sailor/assets/img/clients/client-3.png') }}" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="{{ asset('plantillas/Sailor/assets/img/clients/client-4.png') }}" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="{{ asset('plantillas/Sailor/assets/img/clients/client-5.png') }}" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-            <img src="{{ asset('plantillas/Sailor/assets/img/clients/client-6.png') }}" class="img-fluid" alt="">
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Clients Section -->
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
       <div class="container">
@@ -262,6 +270,62 @@
 
       </div>
     </section><!-- End Portfolio Section -->
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients section-bg">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{{ asset('plantillas/Sailor/assets/img/clients/client-1.png') }}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{{ asset('plantillas/Sailor/assets/img/clients/client-2.png') }}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{{ asset('plantillas/Sailor/assets/img/clients/client-3.png') }}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{{ asset('plantillas/Sailor/assets/img/clients/client-4.png') }}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{{ asset('plantillas/Sailor/assets/img/clients/client-5.png') }}" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="{{ asset('plantillas/Sailor/assets/img/clients/client-6.png') }}" class="img-fluid" alt="">
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Clients Section -->
   </main><!-- End #main -->
+  <?php if(isset($popup->titulopopup)){ ?>
+  <div class="modal modal-lg fade" id="modalpopup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{{$popup->titulopopup}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <?= $popup->contenido;
+          $image_path = public_path('img/popup/').$popup->imagen; 
+          if (file_exists($image_path)){  ?>    
+              <img src="{{asset('img/popup/'.$popup->imagen)}}" class="img-fluid img-thumbnail" />
+          <?php } ?>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php }  ?>
 
 @endsection
