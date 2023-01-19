@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function __invoke(){
         $menus=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $submenus= Menu::whereNotNull('categoriamenu')->get();
-        $data['noticias']=Noticia::orderBy('fechapubli', 'desc')->take(3)->get();
+        $data['noticias']=Noticia::orderBy('fechapubli', 'desc')->get();
         $data['menus']=$menus;
         $data['submenus']=$submenus;
         $data['popup']=Popup::where('estado', 1)->orderBy('created_at', 'desc')->first();

@@ -21,6 +21,7 @@ class SliderController extends Controller
             $slider->descripcioncorta=$request->descripcioncorta;
             $slider->img_slider=$filename;
             $slider->activo_slider=1;
+            $slider->link=$request->link;            
             $slider->save();
             $file->move(public_path('img/slider'), $filename);            
         }else{
@@ -43,6 +44,7 @@ class SliderController extends Controller
     public function update(Request $request, Slider $slider){
         $slider->titulo=$request->titulo;
         $slider->descripcioncorta=$request->descripcioncorta;
+        $slider->link=$request->link;        
         if($request->hasFile('img_slider')){
             $file = $request->file('img_slider');
             $image_path = public_path('img/slider/').$slider->img_slider;              

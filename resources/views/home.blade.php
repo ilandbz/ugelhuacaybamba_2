@@ -1,18 +1,20 @@
 @extends('principal.plantilla')
 @section('title', 'UGEL - HUACAYBAMBA')
 @section('content')
-<section id="hero">
-  <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+<section id="hero" style="margin-top: 120px">
+  <div id="heroCarousel" data-bs-interval="2000" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
     <div class="carousel-inner" role="listbox">
       <?php $estado=false; ?>
       @foreach($sliders as $row)
-        <div class="carousel-item {{ $estado==false ? 'active' : '' }}" style="background-image: url(img/slider/{{ $row->img_slider }})">
+        <div class="carousel-item {{ $estado==false ? 'active' : '' }}" style="background-image: url(img/slider/{{ $row->img_slider }});">
           <div class="carousel-container">
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown">{{$row->titulo}}</span></h2>
               <p class="animate__animated animate__fadeInUp">{{$row->descripcioncorta}}</p>
-              {{-- <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Leer Mas</a> --}}
+              @if ($row->link!=null && $row->link!='')
+              <a target="_blank" href="{{$row->link}}" class="btn-get-started animate__animated animate__fadeInUp scrollto">IR</a>                  
+              @endif
             </div>
           </div>
         </div>
@@ -27,7 +29,7 @@
     </a>
   </div>
 </section><!-- End Hero -->
-<section class="bg-danger p-2">
+<section class="bg-primary p-2">
   <div class="container">
     <div class="row content">
       <div class="col">
@@ -51,151 +53,34 @@
   </div>
 </section>
   <main id="main">
-    <section>
-      <div class="slide-container swiper">
-        <div class="slide-content">
-            <div class="card-wrapper swiper-wrapper">
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-                        <div class="card-image">
-                            <!--<img src="images/profile1.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-                        <div class="card-image">
-                            <!--<img src="images/profile2.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-                        <div class="card-image">
-                            <!--<img src="images/profile3.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-                        <div class="card-image">
-                            <!--<img src="images/profile4.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-                        <div class="card-image">
-                            <!--<img src="images/profile5.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-                        <div class="card-image">
-                            <!--<img src="images/profile6.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-                        <div class="card-image">
-                            <!--<img src="images/profile7.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-                        <div class="card-image">
-                            <!--<img src="images/profile8.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-                        <div class="card-image">
-                            <!--<img src="images/profile9.jpg" alt="" class="card-img">-->
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-button-next swiper-navBtn"></div>
-        <div class="swiper-button-prev swiper-navBtn"></div>
-        <div class="swiper-pagination"></div>
-    </div>
-    </section>
-    <section>
+    <section class="mt-0 pt-1">
       <div class="container">
-        <h2>ULTIMAS NOTICIAS</h2>
-      <div class="row">
-        @foreach ($noticias as $item)
-        <div class="col">
-          <div class="card" style="width: 18rem;">
-            <img src="{{asset('img/noticias/'.$item->img1)}}" class="card-img-top" height="200px" />
-            <div class="card-body">
-              <h5 class="card-title">{{ Str::limit($item->titulo, 30) }}</h5>
-              <p class="card-text">{{ Str::limit($item->descripcioncorta, 60) }}</p>
-              <a href="{{route('noticia', $item->id)}}" class="btn btn-primary">Ver Mas</a> <span class="badge bg-secondary"> Publicacion : {{ substr($item->fechapubli, 0.8)}}</span>
-            </div>
+        <div class="slide-container swiper">
+          <h2>ULTIMAS NOTICIAS</h2>
+          <div class="slide-content">
+              <div class="card-wrapper swiper-wrapper">
+                @foreach ($noticias as $item)
+                <div class="card swiper-slide">
+                    <img src="{{asset('img/noticias/'.$item->img1)}}" class="card-img-top" height="200px" />
+                    <div class="card-body">
+                      <h5 class="card-title">{{ Str::limit($item->titulo, 30) }}</h5>
+                      <p class="card-text">{{ Str::limit($item->descripcioncorta, 40) }}</p>
+                      <div class="card-footer">
+                        @php
+                            $date = date_create($item->fechapubli);
+                        @endphp
+                        <span class="blockquote-footer"> Pub : {{ date_format($date, 'd-m-Y')}}</span>&nbsp;
+                        <a href="{{route('noticia', $item->id)}}" class="btn btn-sm btn-danger">Ver Mas</a>
+                      </div>
+                    </div>
+                </div>         
+                @endforeach
+              </div>
           </div>
-        </div>            
-        @endforeach
-      </div>
+          <div class="swiper-button-next swiper-navBtn"></div>
+          <div class="swiper-button-prev swiper-navBtn"></div>
+          <div class="swiper-pagination"></div>
+        </div>
       </div>
     </section>
     <section>

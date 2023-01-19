@@ -7,14 +7,20 @@
         @csrf
         @method('put')
         <div class="row mg-b-25">
-            <div class="col-lg-4">
+            <div class="col-lg-5">
                 <div class="form-group">
                     <label class="form-control-label" for="titulo">Titulo: <span class="tx-danger">*</span></label>
                     <input class="form-control" type="text" name="titulo" id="titulo" value="{{$slider->titulo}}" placeholder="Nombre">
                     <x-input-error :messages="$errors->get('titulo')" class="mt-2" />
                 </div>
-            </div><!-- col-4 -->
-            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="form-control-label" for="link">LINK: <span class="tx-danger">*</span></label>
+                    <input class="form-control" type="text" name="link" id="link" value="{{$slider->link}}" placeholder="http://">
+                    <x-input-error :messages="$errors->get('link')" class="mt-2" />
+                </div>                
+            </div>
+
+            <div class="col-lg-7">
                 <div class="form-group">
                     <label class="form-control-label" for="titulo">Descripcion Corta: <span class="tx-danger">*</span></label>
                     <textarea name="descripcioncorta" id="descripcioncorta" rows="4" class="form-control">{{$slider->descripcioncorta}}</textarea>
