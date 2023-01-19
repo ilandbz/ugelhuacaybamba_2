@@ -43,7 +43,28 @@ class DirectorioController extends Controller
         return redirect()->route('directorio');
     }
     public function edit(Directorio $directorio){
+        $data['areas']=Area::get();
         $data['directorio']=$directorio;
         return view('intranet/directorio/edit', $data);
+    }
+    public function update(Directorio $directorio, Request $request){
+        $directorio->apenom = $request->apenom;
+        $directorio->dni = $request->dni;
+        $directorio->area = $request->area;
+        $directorio->cargo = $request->cargo;
+        $directorio->email = $request->email;
+        $directorio->celular = $request->celular;
+        if($request->hasFile('foto')){
+            $file = $request->file('foto');
+            $image_path = public_path('img/fotos/').$directorio->foto; 
+            $filename = substr($directorio->foto, 0, -4).'.'.$file->extension();
+            $directorio->foto=$filename;
+            if ($directorio->foto!=null && file_exists($image_path)){
+                unlink($image_path);
+            }
+            $file->move(public_path('img/fotos'), $filename); 
+        }
+        $directorio->save();
+        return redirect()->route('directorio');
     }
 }

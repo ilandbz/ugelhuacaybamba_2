@@ -14,7 +14,7 @@ class MenuController extends Controller
         // return view('intranet/menu', $data); 
     }
     public function create(){
-        $data['menus']=Menu::paginate(4);        
+        $data['menus']=Menu::select('menus.*', 'm2.nom_menu as categoria')->leftJoin('menus as m2', 'menus.categoriamenu', '=', 'm2.id')->paginate(10);
         $data['menusdd']=Menu::where('link_menu', '#')->get();
         return view('intranet/menu/create', $data);
     }
@@ -35,7 +35,7 @@ class MenuController extends Controller
         $menu->categoriamenu=$request->categoriamenu;
         $menu->idpagina=$idpagina;
         $menu->save();
-        return redirect()->route('formregistro', $menu);
+        return redirect()->route('formregistro');
     }
     public function prueba(){
         $idpagina = Pagina::select('id')->max('id');
@@ -58,6 +58,11 @@ class MenuController extends Controller
         $menu->nom_menu=$request->nom_menu;
         $menu->link_menu = $request->link_menu;
         $menu->activo_menu = $request->activo_menu;
+        if($request->categoriamenu==''){
+            $menu->categoriamenu = null; 
+        }else{
+            $menu->categoriamenu = $request->categoriamenu; 
+        }   
         if($menu->link_menu=='#'){//si no tubo paginas web
             if($request->link_menu!='#'){//existe registro de pagina web nueva pagina web
                 $idpagina = 1+Pagina::select('id')->max('id');
@@ -82,7 +87,7 @@ class MenuController extends Controller
             }
         }
         $menu->save();
-        return redirect()->route('menu.edit', $menu);
+        return redirect()->route('formregistro');
     }
     public function edit(Menu $menu){
         $data['menusdd']=Menu::where('link_menu', '#')->get();

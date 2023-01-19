@@ -73,10 +73,12 @@
                     //$('.select2').attr('disabled', false);
                     $('#contenidopagina').removeClass('d-none'); 
                     $('#link_menu').val(''); 
+                    $('#nom_pagina').val($('input[name=nom_menu]').val());
                 }else{
                     //$('.select2').attr('disabled', true);
                     $('#link_menu').val('#'); 
                     $('#contenidopagina').addClass('d-none'); 
+                    $('#nom_pagina').val('');
                 }
                 $(this).toggleClass('on');
             });

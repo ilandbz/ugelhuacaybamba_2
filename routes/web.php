@@ -8,6 +8,7 @@ use App\Http\Controllers\SliderController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\PopupController;
 use App\Http\Controllers\DirectorioController;
+use App\Http\Controllers\ConvocatoriaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,10 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', HomeController::class)->name('home');
 Route::get('/noticia/{noticia}', [HomeController::class, 'noticia'])->name('noticia');
+Route::get('/directorioweb', [HomeController::class, 'directorio'])->name('directorioweb');
+Route::get('/nosotros', [HomeController::class, 'nosotros'])->name('nosotros');
+Route::get('/mision', [HomeController::class, 'mision'])->name('mision');
+Route::get('/vision', [HomeController::class, 'vision'])->name('vision');
 
 Route::controller(MenuController::class)->group(function(){
     Route::get('menus', 'index')->name('menu');
@@ -78,6 +83,21 @@ Route::controller(DirectorioController::class)->group(function(){
     Route::get('directorio/{directorio}', 'destroy')->middleware(['auth', 'verified'])->name('directorio.destroy');
     Route::get('directorio/edit/{directorio}', 'edit')->middleware(['auth', 'verified'])->name('directorio.edit');
     Route::put('directorio/update/{directorio}', 'update')->middleware(['auth', 'verified'])->name('directorio.update');               
+});
+Route::controller(ConvocatoriaController::class)->group(function(){
+    Route::get('convocatoria', 'index')->middleware(['auth', 'verified'])->name('convocatoria');
+    Route::get('convocatoria/create', 'create')->middleware(['auth', 'verified'])->name('convocatoria.create');
+    Route::post('convocatoria/store', 'store')->middleware(['auth', 'verified'])->name('convocatoria.store');
+    Route::get('convocatoria/{convocatoria}', 'destroy')->middleware(['auth', 'verified'])->name('convocatoria.destroy');
+    Route::get('convocatoria/edit/{convocatoria}', 'edit')->middleware(['auth', 'verified'])->name('convocatoria.edit');
+    Route::put('convocatoria/update/{convocatoria}', 'update')->middleware(['auth', 'verified'])->name('convocatoria.update'); 
+    Route::get('convocatoria/show/{convocatoria}', 'show')->middleware(['auth', 'verified'])->name('convocatoria.show'); 
+    Route::get('convocatoria/archivocreate/{convocatoria}', 'archivo_convocatoriacreate')->middleware(['auth', 'verified'])->name('archivo.convocatoria.create'); 
+    Route::get('convocatoria/archivo/{archivoconvocatoria}', 'archivoconvocatoriadestroy')->middleware(['auth', 'verified'])->name('archivo.convocatoria.destroy');
+    Route::get('convocatoria/editarchivo/{convocatoria}', 'archivoedit')->middleware(['auth', 'verified'])->name('archivo.convocatoria.edit');
+    Route::post('convocatoria/archivo/store/{convocatoria}', 'archivocstore')->middleware(['auth', 'verified'])->name('archivo.convocatoria.store');
+    
+              
 });
 Route::get('prueba', [MenuController::class, 'prueba'])->name('prueba');
 

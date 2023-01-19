@@ -27,7 +27,7 @@
                 <span class="menu-item-label">Menu</span>
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub">
-                <li class="sub-item"><a href="{{route('formregistro')}}" class="sub-link">Registrar</a></li>
+                <li class="sub-item"><a href="{{route('formregistro')}}" class="sub-link">Administrar</a></li>
             </ul>
             </li>
             <li class="br-menu-item">
@@ -45,8 +45,8 @@
                 <span class="menu-item-label">Convocatorias</span>
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub nav flex-column">
-                <li class="sub-item"><a href="table-basic.html" class="sub-link">Basic Table</a></li>
-                <li class="sub-item"><a href="table-datatable.html" class="sub-link">Data Table</a></li>
+                <li class="sub-item"><a href="{{route('convocatoria.create')}}" class="sub-link">Registrar</a></li>
+                <li class="sub-item"><a href="{{route('convocatoria')}}" class="sub-link">Administrar</a></li>
             </ul>
             </li><!-- br-menu-item -->
             <li class="br-menu-item">

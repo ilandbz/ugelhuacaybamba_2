@@ -23,12 +23,12 @@
                 <tr>
                     <td class="border border-slate-500">{{ $item->id }}</td>
                     <td class="border border-slate-500">{{ $item->apenom }}</td>
-                    <td class="border border-slate-500">
+                    <td class="border border-slate-500 p-0">
                         <?php
                         $image_path = public_path('img/fotos/').$item->foto; 
                         if (file_exists($image_path)){  ?>
                         <div class="col">
-                            <img src="{{asset('img/fotos/'.$item->foto)}}" class="img-fluid img-thumbnail" width="100" />
+                            <img src="{{asset('img/fotos/'.$item->foto)}}" class="img-fluid" width="150" />
                         </div>
                         <?php } ?>
                     </td>

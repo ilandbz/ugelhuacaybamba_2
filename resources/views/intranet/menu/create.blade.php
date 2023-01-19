@@ -9,7 +9,7 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="form-control-label" for="nom_menu">Nombre: <span class="tx-danger">*</span></label>
-                    <input class="form-control" type="text" name="nom_menu" id="nom_menu" :value="old('nom_menu')" placeholder="Nombre">
+                    <input class="form-control" type="text" name="nom_menu" id="nom_menu" :value="old('nom_menu')" placeholder="Nombre" required>
                     <x-input-error :messages="$errors->get('nom_menu')" class="mt-2" />
                 </div>
             </div><!-- col-4 -->
@@ -34,7 +34,7 @@
         </div><!-- row -->
         <div class="row">
             <div class="col-md-12 d-none" id="contenidopagina">
-                <label class="form-control-label">Nombre Pagina: </label>
+                <label class="form-control-label">Titulo Pagina: </label>
                 <input class="form-control" type="text" name="nom_pagina" id="nom_pagina" :value="old('nom_pagina')" placeholder="">
                 <label class="form-control-label">Contenido: </label>
                 <textarea rows="8" class="form-control is-valid mg-t-20" name="cont_pagina" id="mysummernote" placeholder="Textarea (success state)"></textarea>
@@ -74,14 +74,11 @@
                     <td class="border border-slate-500">{{ $item->id }}</td>
                     <td class="border border-slate-500">{{ $item->nom_menu }}</td>
                     <td class="border border-slate-500">{{ $item->link_menu }}</td>
-                    <td class="border border-slate-500">{{ $item->activo_menu }}</td>
-                    <td class="border border-slate-500">{{ $item->categoriamenu }}</td>
+                    <td class="border border-slate-500">{{ $item->activo_menu==1 ? 'ACTIVO' : 'INACTIVO' }}</td>
+                    <td class="border border-slate-500">{{ $item->categoria }}</td>
                     <td class="border border-slate-500">
                     <a href="{{ route('menus.destroy', $item->id) }}" class="btn btn-danger btn-sm eliminar" title="Eliminar"><i class="fas fa-trash"></i></a>
                     <a href="{{route('menu.edit', $item->id)}}" class="btn btn-warning btn-sm" title="Editar"><i class="icon ion-edit"></i></a>&nbsp;
-                    <?php if($item->link_menu != '#'){    ?>
-                    <a href="{{route('menus.paginaweb')}}" class="mt-0">Pagina Web</a>
-                    <?php } ?>
                     </td>
                 </tr>
                 </tbody>

@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{ asset('plantillas/Sailor/assets/img/favicon.png') }}" rel="icon">
+  <link href="{{ asset('img/otros/logo.ico') }}" rel="icon">
   <link href="{{ asset('plantillas/Sailor/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -24,12 +24,14 @@
   <link href="{{ asset('plantillas/Sailor/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
   <link href="{{ asset('plantillas/Sailor/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
   <link href="{{ asset('plantillas/Sailor/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
-
+  <link href="{{ asset('css/miestilo.css') }}" rel="stylesheet">
+  
   <!-- Template Main CSS File -->
   <link href="{{ asset('plantillas/Sailor/assets/css/style.css') }}" rel="stylesheet">
 
   <!-- Fontawesome -->
   <link href="{{ asset('fontawesome/css/all.min.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -45,8 +47,10 @@
   <script src="{{ asset('plantillas/Sailor/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
   <script src="{{ asset('plantillas/Sailor/assets/vendor/waypoints/noframework.waypoints.js')}}"></script>
   <script src="{{ asset('plantillas/Sailor/assets/vendor/php-email-form/validate.js')}}"></script>
+  <script src="{{ asset('plantillas/Sailor/assets/vendor/bootstrap/bootstrap.min.js')}}"></script>
   <!-- Template Main JS File -->
   <script src="{{ asset('plantillas/Sailor/assets/js/main.js')}}"></script>
+  <script src="{{ asset('js/miscript.js')}}"></script>
   <script>
 
     $(document).ready(function(){
