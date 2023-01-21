@@ -9,6 +9,7 @@ use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\PopupController;
 use App\Http\Controllers\DirectorioController;
 use App\Http\Controllers\ConvocatoriaController;
+use App\Http\Controllers\ImagenEventoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +28,8 @@ Route::get('/directorioweb', [HomeController::class, 'directorio'])->name('direc
 Route::get('/nosotros', [HomeController::class, 'nosotros'])->name('nosotros');
 Route::get('/mision', [HomeController::class, 'mision'])->name('mision');
 Route::get('/vision', [HomeController::class, 'vision'])->name('vision');
-
+Route::get('/portafoliodet/{galeria}', [HomeController::class, 'portafoliodet'])->name('portafoliodet');
+Route::get('/allnoticias', [HomeController::class, 'allnoticias'])->name('allnoticias');
 Route::controller(MenuController::class)->group(function(){
     Route::get('menus', 'index')->name('menu');
     Route::get('menus/edit/{menu}', 'edit')->middleware(['auth', 'verified'])->name('menu.edit');    
@@ -96,15 +98,23 @@ Route::controller(ConvocatoriaController::class)->group(function(){
     Route::get('convocatoria/archivo/{archivoconvocatoria}', 'archivoconvocatoriadestroy')->middleware(['auth', 'verified'])->name('archivo.convocatoria.destroy');
     Route::get('convocatoria/editarchivo/{convocatoria}', 'archivoedit')->middleware(['auth', 'verified'])->name('archivo.convocatoria.edit');
     Route::post('convocatoria/archivo/store/{convocatoria}', 'archivocstore')->middleware(['auth', 'verified'])->name('archivo.convocatoria.store');
-    
-              
+});
+Route::controller(ImagenEventoController::class)->group(function(){
+    Route::get('galeria', 'index')->middleware(['auth', 'verified'])->name('galeria');
+    Route::get('galeria/create', 'create')->middleware(['auth', 'verified'])->name('galeria.create');
+    Route::post('galeria/store', 'store')->middleware(['auth', 'verified'])->name('galeria.store');
+    Route::get('galeria/{galeria}', 'destroy')->middleware(['auth', 'verified'])->name('galeria.destroy');
+    Route::get('galeria/imagen/{imagenevento}', 'destroyarchivo')->middleware(['auth', 'verified'])->name('galeria.destroyarchivo');
+    Route::get('galeria/edit/{galeria}', 'edit')->middleware(['auth', 'verified'])->name('galeria.edit');
+    Route::put('galeria/update/{galeria}', 'update')->middleware(['auth', 'verified'])->name('galeria.update');
+    Route::get('galeria/show/{galeria}', 'show')->middleware(['auth', 'verified'])->name('galeria.show');
+    Route::get('galeria/agregarimagen/{galeria}', 'agregarimagen')->middleware(['auth', 'verified'])->name('galeria.agregarimagen');
+    Route::post('galeria/storeimagen', 'storeimagen')->middleware(['auth', 'verified'])->name('galeria.storeimagen');               
 });
 Route::get('prueba', [MenuController::class, 'prueba'])->name('prueba');
-
 Route::get('/intranet', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('intranet');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

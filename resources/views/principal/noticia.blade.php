@@ -1,9 +1,9 @@
 @extends('principal.plantilla')
 @section('title', 'UGEL - HUACAYBAMBA')
 @section('content')
-<br><br>
+
 <main id="main">
-<section id="about" class="about">
+<section id="about" class="about" style="margin-top: 90px">
   <div class="container">
     <div class="row content">
       <div class="col-lg-6">

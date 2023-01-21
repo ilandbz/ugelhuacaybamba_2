@@ -3,7 +3,7 @@
 @section('content')
 <br><br>
 <main id="main">
-<section id="about" class="about">
+<section id="about" class="about" style="margin-top: 90px">
   <div class="container">
     <h2>NOSOTROS</h2><br>
     <div class="card-body titulonot_2" style="padding: 25px">

@@ -43,27 +43,26 @@
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
+              <div id="block-5" class="widget widget_block widget_text">
+                 <p>Ley Nº 27444 DECRETO SUPREMO Nº 042-2011-PCM, es obligación de las Entidades del Sector Público de contar con un Libro de Reclamaciones</p>
+              </div>
+              <div id="block-9" class="widget widget_block widget_media_gallery">
+                 <figure class="wp-container-2 wp-block-gallery-1 wp-block-gallery has-nested-images columns-default is-cropped">
+                    <figure class="wp-block-image size-full"><a href="https://reclamos.servicios.gob.pe/?institution_id=67"><img loading="lazy" width="383" height="148" data-id="2720" src="https://dreh.drehuanuco.edu.pe/wp-content/uploads/2022/08/libo-1.png" alt="" class="wp-image-2720" srcset="https://drehuanuco.gob.pe/wp-content/uploads/2022/08/libo-1.png 383w, https://drehuanuco.gob.pe/wp-content/uploads/2022/08/libo-1-300x116.png 300w" sizes="(max-width: 383px) 100vw, 383px"></a></figure>
+                 </figure>
+              </div>
+              <div id="block-12" class="widget widget_block widget_text">
+                 <p></p>
+              </div>
           </div>
-
         </div>
       </div>
     </div>
-
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Sailor</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>UGEL HUACAYBAMBA</span></strong>. Todos los derechos Reservados
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/sailor-free-bootstrap-theme/ -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>

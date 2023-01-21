@@ -50,7 +50,6 @@ class SliderController extends Controller
             $image_path = public_path('img/slider/').$slider->img_slider;              
             $filename = substr($slider->img_slider, 0, -4).'.'.$file->extension();
             $slider->img_slider=$filename;
-      
             if (file_exists($image_path)){
                 unlink($image_path);
             }

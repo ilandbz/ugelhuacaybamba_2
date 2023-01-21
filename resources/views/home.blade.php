@@ -55,381 +55,156 @@
   <main id="main">
     <section class="mt-0 pt-1">
       <div class="container">
-        <div class="slide-container swiper">
-          <h2>ULTIMAS NOTICIAS</h2>
-          <div class="slide-content">
-              <div class="card-wrapper swiper-wrapper">
-                @foreach ($noticias as $item)
-                <div class="card swiper-slide">
-                    <img src="{{asset('img/noticias/'.$item->img1)}}" class="card-img-top" height="200px" />
-                    <div class="card-body">
-                      <h5 class="card-title">{{ Str::limit($item->titulo, 30) }}</h5>
-                      <p class="card-text">{{ Str::limit($item->descripcioncorta, 40) }}</p>
-                      <div class="card-footer">
-                        @php
-                            $date = date_create($item->fechapubli);
-                        @endphp
-                        <span class="blockquote-footer"> Pub : {{ date_format($date, 'd-m-Y')}}</span>&nbsp;
-                        <a href="{{route('noticia', $item->id)}}" class="btn btn-sm btn-danger">Ver Mas</a>
+        <div class="row p-2" style="background: url(img/rayaazul.svg), rgb(207, 226, 255); border-radius: 4px;">
+          <div class="slide-container swiper">
+            <h2>ULTIMAS NOTICIAS</h2>
+            <div class="slide-content">
+                <div class="card-wrapper swiper-wrapper">
+                  @foreach ($noticias as $item)
+                  <div class="card swiper-slide">
+                      <img src="{{asset('img/noticias/'.$item->img1)}}" class="card-img-top" height="200px" />
+                      <div class="card-body">
+                        <h5 class="card-title">{{ Str::limit($item->titulo, 30) }}</h5>
+                        <p class="card-text">{{ Str::limit($item->descripcioncorta, 40) }}</p>
+                        <div class="card-footer">
+                          @php
+                              $date = date_create($item->fechapubli);
+                          @endphp
+                          <span class="blockquote-footer"> Pub : {{ date_format($date, 'd-m-Y')}}</span>&nbsp;
+                          <a href="{{route('noticia', $item->id)}}" class="btn btn-sm btn-danger">Ver Mas</a>
+                        </div>
                       </div>
-                    </div>
-                </div>         
-                @endforeach
-              </div>
+                  </div>         
+                  @endforeach
+                </div>
+            </div>
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
           </div>
-          <div class="swiper-button-next swiper-navBtn"></div>
-          <div class="swiper-button-prev swiper-navBtn"></div>
-          <div class="swiper-pagination"></div>
+          <div align="right"><a href="{{route('allnoticias')}}" class="btn btn-primary btn-sm">
+            Ver más noticias
+            <i aria-hidden="true" class="fas fa-arrow-circle-right"></i></a>
+          </div>
         </div>
       </div>
     </section>
     <section>
-<div class="container">
-  <div data-v-ad051cf0="" class="row mt-4 text-center">
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <a data-v-ad051cf0="" href="/procompite" target="_blank" class="btn btn-block btn-outline-danger boton shadow anima_btn">
-          <i data-v-ad051cf0="" class="fa fa-file fa-2x"></i> 
-          <p data-v-ad051cf0="" class="text-uppercase pt-3 lh-1">Inscripción<br>Procompite</p>
-       </a>
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <a data-v-ad051cf0="" href="http://digital.regionhuanuco.gob.pe/" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn">
-          <i data-v-ad051cf0="" class="fa-solid fa-boxes-packing fa-2x"></i> 
-          <p data-v-ad051cf0="" class="text-uppercase pt-3 lh-1">Sistema de gestión<br>digital</p>
-       </a>
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <a data-v-ad051cf0="" href="/ldirectorio" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn">
-          <i data-v-ad051cf0="" class="fa fa-laptop fa-2x"></i> 
-          <p data-v-ad051cf0="" class="text-uppercase pt-3 lh-1">Directorio<br>institucional</p>
-       </a>
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <a data-v-ad051cf0="" href="http://www2.regionhuanuco.gob.pe/portal/admin/" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn">
-          <i data-v-ad051cf0="" class="fa fa-cogs fa-2x"></i> 
-          <p data-v-ad051cf0="" class="text-uppercase pt-3 lh-1">acceso a <br>intranet</p>
-       </a>
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <a data-v-ad051cf0="" href="https://drive.google.com/file/d/1gYufSyJ1ivevw9h77ooai4XgE8Qg9LGn/view?usp=sharing" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn">
-          <i data-v-ad051cf0="" class="fa fa-file fa-2x"></i> 
-          <p data-v-ad051cf0="" class="text-uppercase pt-3 lh-1">formato único de <br> trámite</p>
-       </a>
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <a data-v-ad051cf0="" href="/lnormatividad/Acuerdo de Consejo/2020" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn">
-          <i data-v-ad051cf0="" class="fa fa-chalkboard fa-2x"></i> 
-          <p data-v-ad051cf0="" class="text-uppercase pt-3 lh-1">Normatividad<br>regional</p>
-       </a>
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <a data-v-ad051cf0="" href="/pagina/102" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn">
-          <i data-v-ad051cf0="" class="fa fa-clipboard-list fa-2x"></i> 
-          <p data-v-ad051cf0="" class="text-uppercase pt-3 lh-1">documentos de<br>gestión</p>
-       </a>
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <a data-v-ad051cf0="" href="/lnormatividad/Ordenanza Regional/2015" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn">
-          <i data-v-ad051cf0="" class="fa fa-columns fa-2x"></i> 
-          <p data-v-ad051cf0="" class="text-uppercase pt-3 lh-1">Ordenanzas<br>regionales</p>
-       </a>
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <a data-v-ad051cf0="" href="/lautoridades" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn">
-          <i data-v-ad051cf0="" class="fa fa-diagnoses fa-2x"></i> 
-          <p data-v-ad051cf0="" class="text-uppercase pt-3 lh-1">Nuestras <br>Autoridades</p>
-       </a>
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <a data-v-ad051cf0="" href="/lnormatividad/Acuerdo de Consejo/2016" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn">
-          <i data-v-ad051cf0="" class="fa fa-clipboard-check fa-2x"></i> 
-          <p data-v-ad051cf0="" class="text-uppercase pt-3 lh-1">Acuerdo de consejo</p>
-       </a>
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <a data-v-ad051cf0="" href="http://www2.regionhuanuco.gob.pe/portal/proyectos/proyecto_lista.php" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn">
-          <i data-v-ad051cf0="" class="fa fa-dice-d20 fa-2x"></i> 
-          <p data-v-ad051cf0="" class="text-uppercase pt-3 lh-1">Consulta de <br>Obras</p>
-       </a>
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <a data-v-ad051cf0="" href="/visitas" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn">
-          <i data-v-ad051cf0="" class="fa fa-edit fa-2x"></i> 
-          <p data-v-ad051cf0="" class="text-uppercase pt-3 lh-1">Registro de <br>Visitas</p>
-       </a>
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
-    <div data-v-ad051cf0="" class="col-xs-4 col-sm-2 col-6 mb-1">
-       <!---->
-    </div>
- </div>
-</div>
-    </section>
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
       <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="icon-box">
-              <i class="bi bi-briefcase"></i>
-              <h4><a href="{{route('directorioweb')}}">Directorio</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+        <div class="row mt-1 text-center">
+
+          <div class="col-6">
+            <h2>TRAMITES Y SERVICIOS</h2>
+            <br>
+            <div class="row">
+              <div class="col">
+                <a href="http://digital.regionhuanuco.gob.pe/" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                    <i class="fa-solid fa-boxes-packing fa-2x"></i> 
+                    <p class="text-uppercase pt-3 lh-1 msb">Sistema de gestión<br>digital</p>
+                </a>              
+              </div>
+              <div class="col">
+                <a href="/ldirectorio" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                    <i class="fa fa-laptop fa-2x"></i> 
+                    <p class="text-uppercase pt-3 lh-1 msb">Directorio<br>institucional</p>
+                </a>               
+              </div>
+              <div class="col">
+                <a href="http://www2.regionhuanuco.gob.pe/portal/admin/" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                    <i class="fa fa-cogs fa-2x"></i> 
+                    <p class="text-uppercase pt-3 lh-1 msb">acceso a <br>intranet</p>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a href="https://drive.google.com/file/d/1gYufSyJ1ivevw9h77ooai4XgE8Qg9LGn/view?usp=sharing" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                    <i class="fa fa-file fa-2x"></i> 
+                    <p class="text-uppercase pt-3 lh-1 msb">formato único de <br> trámite</p>
+                </a>
+              </div>
+              <div class="col">
+                <a href="/pagina/102" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                    <i class="fa fa-clipboard-list fa-2x"></i> 
+                    <p class="text-uppercase pt-3 lh-1 msb">documentos de<br>gestión</p>
+                </a>
+              </div>
+              <div class="col">
+                <a href="/lautoridades" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                    <i class="fa fa-diagnoses fa-2x"></i> 
+                    <p class="text-uppercase pt-3 lh-1 msb">Nuestras <br>Autoridades</p>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <a href="/lnormatividad/Acuerdo de Consejo/2016" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                    <i class="fa fa-clipboard-check fa-2x"></i> 
+                    <p class="text-uppercase pt-3 lh-1 msb">Acuerdo de consejo</p>
+                </a>
+              </div>
+              <div class="col"></div>
+              <div class="col">
+                <a href="/visitas" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                    <i class="fa fa-edit fa-2x"></i> 
+                    <p class="text-uppercase pt-3 lh-1 msb">Registro de <br>Visitas</p>
+                </a>
+              </div>            
             </div>
           </div>
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="bi bi-card-checklist"></i>
-              <h4><a href="{{ route('nosotros')}}">Nosotros</a></h4>
-              <p>{{ Str::limit('La Unidad de Gestión Educativa Local Huacaybamba, es una entidad pública con fines netamente educativos, constituido desde el Órgano de Dirección, área de Gestión Pedagógica, Área de Gestión  Administrativa, Área de Gestión Institucional. Teniendo como objetivo promover el desarrollo del servicio educativo de calidad con equidad, valores, respetando la interculturalidad de los pueblos de nuestra jurisdicción, concordante con la política regional y nacional.
-                Asimismo, cumpliendo con los protocolos establecidos por la normativa del estado de emergencia debido a la pandemia mundial, originado por el COVID-19; convirtiéndose en esta parte de la Región Huánuco como una de las UGEL que innovo en las plataformas virtuales para la continuación de los aprendizajes con nuestros directores, docentes, niños, niñas, adolescentes y toda la comunidad educativa de nuestra jurisdicción.
-                Iniciando una nueva etapa de gestión a cargo del Mg. Hugo Eduardo Palomino Esteban , actual director de la UGEL Huacaybamba, asumiendo los compromisos para la ejecución al 100% del presupuesto y cumplimiento de metas para el presente año, asimismo para la construcción del Proyecto Educativo Local (PEL), generar las condiciones para el Buen Inicio del Año Escolar 2021, con monitoreo y talleres de fortalecimiento de capacidades.', 200) }}</p>
-            </div>
+          <div class="col-6">
+            <h2>VIDEOS </h2><br>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/D2TE209uRMo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="bi bi-bar-chart"></i>
-              <h4><a href="{{ route('mision')}}">Mision</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>
-          <div class="col-md-6 mt-4 mt-md-0">
-            <div class="icon-box">
-              <i class="bi bi-binoculars"></i>
-              <h4><a href="{{ route('vision')}}">Vision</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div>
-        </div>
+
       </div>
-    </section><!-- End Services Section -->
+      </div>
+    </section>
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">
       <div class="container">
-
+        <h2>GALERIA de FOTOS</h2>
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
+            {{-- <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
               <li data-filter=".filter-app">App</li>
               <li data-filter=".filter-card">Card</li>
               <li data-filter=".filter-web">Web</li>
-            </ul>
+            </ul> --}}
           </div>
         </div>
 
         <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-1.jpg') }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-1.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+          @foreach ($registrosgaleria as $item)
+              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                <div class="portfolio-wrap">
+                  <img src="{{asset('img/imageneventos/'.$item->img)}}" class="img-fluid" alt="">
+                  <div class="portfolio-info">
+                    <h4>{{$item->titulo}}</h4>
+                    <p>{{$item->descripcion}}</p>
+                    <div class="portfolio-links">
+                      <a href="{{asset('img/imageneventos/'.$item->img)}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$item->titulo}}"><i class="bx bx-plus"></i></a>
+                      <a href="{{route('portafoliodet', $item)}}" class="portfolio-details-lightbox" data-glightbox="type: external" title="{{$item->descripcion}}"><i class="bx bx-link"></i></a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
+              </div>    
+          @endforeach
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-2.jpg') }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-2.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-3.jpg') }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-3.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-4.jpg') }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-4.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-5.jpg') }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-5.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-6.jpg') }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-6.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-7.jpg') }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-7.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-8.jpg') }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-8.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-9.jpg') }}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="{{ asset('plantillas/Sailor/assets/img/portfolio/portfolio-9.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
 
         </div>
 
       </div>
     </section><!-- End Portfolio Section -->
+
     <section>
       <div class="container">
         <div class="row">
           <div class="col">
             <div class="text-center"><h3>ENLACES EXTERNOS</h3></div>
             <br>
-            <div data-v-ad051cf0="" class="swiper-container swiper-multiple swiper-container-initialized swiper-container-horizontal">
+            <div class="swiper-container swiper-multiple swiper-container-initialized swiper-container-horizontal">
               <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-96.3333px, 0px, 0px);">
                 <div class="swiper-slide" style="width: 152.667px; margin-right: 40px;">
                     <div class="swiper-text pt-md-1 pt-sm-50"><a href="https://apps.contraloria.gob.pe/infobras/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/Rl0wASlIqPa8n0KSJmmUtsAMY1gYWtNIEUSQgt9B.jpg" fluid=""></a></div>
@@ -473,7 +248,6 @@
         </div>
       </div>
     </section>
-
   </main><!-- End #main -->
   <?php if(isset($popup->titulopopup)){ ?>
   <div class="modal modal-lg fade" id="modalpopup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -497,5 +271,4 @@
     </div>
   </div>
   <?php }  ?>
-
 @endsection

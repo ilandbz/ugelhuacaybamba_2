@@ -79,6 +79,16 @@
                     <li class="sub-item"><a href="{{route('popup.create')}}" class="sub-link">Nueva</a></li>
                 </ul>
             </li><!-- br-menu-item -->
+            <li class="br-menu-item">
+                <a href="#" class="br-menu-link with-sub">
+                  <i class="menu-item-icon icon ion-ios-book-outline tx-22"></i>
+                  <span class="menu-item-label">Imagen Eventos</span>
+                </a><!-- br-menu-link -->
+                <ul class="br-menu-sub nav flex-column">
+                    <li class="sub-item"><a href="{{route('galeria')}}" class="sub-link">Administrar</a></li>
+                    <li class="sub-item"><a href="{{route('galeria.create')}}" class="sub-link">Nueva</a></li>
+                </ul>
+            </li>
         </ul><!-- br-sideleft-menu -->
         <br>
         </div><!-- br-sideleft -->
@@ -99,7 +109,6 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-header wd-250">
                 <hr>
-
                 <hr>
                 <ul class="list-unstyled user-profile-nav">
                     <li><a href="{{route('profile.edit')}}"><i class="icon ion-ios-person"></i> Editar Perfil</a></li>
