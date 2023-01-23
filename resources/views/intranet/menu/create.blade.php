@@ -20,7 +20,7 @@
                     <div class="br-toggle-switch"></div>
                   </div>
             </div><!-- col-4 -->
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="form-group mg-b-10-force">
                 <label class="form-control-label" for="categoriamenu">Categoria: <span class="tx-danger">*</span></label>
                 <select class="form-control select2" id="categoriamenu" name="categoriamenu" data-placeholder="Elige Categoria">
@@ -30,7 +30,14 @@
                     @endforeach
                 </select>
                 </div>
-            </div><!-- col-4 -->
+            </div>
+            <div class="col-lg-3">
+                <div class="form-group">
+                    <label class="form-control-label" for="link_menu">Link: <span class="tx-danger">*</span></label>
+                    <input class="form-control" type="text" name="link_menu" id="link_menu" value="#" placeholder="Link Menu">
+                    <x-input-error :messages="$errors->get('link_menu')" class="mt-2" />
+                </div>   
+            </div>
         </div><!-- row -->
         <div class="row">
             <div class="col-md-12 d-none" id="contenidopagina">
@@ -38,13 +45,6 @@
                 <input class="form-control" type="text" name="nom_pagina" id="nom_pagina" :value="old('nom_pagina')" placeholder="">
                 <label class="form-control-label">Contenido: </label>
                 <textarea rows="8" class="form-control is-valid mg-t-20" name="cont_pagina" id="mysummernote" placeholder="Textarea (success state)"></textarea>
-            </div>
-            <div class="col-md-4 d-none">
-                <div class="form-group">
-                    <label class="form-control-label" for="link_menu">Link: <span class="tx-danger">*</span></label>
-                    <input class="form-control" type="text" name="link_menu" id="link_menu" value="#" placeholder="Link Menu">
-                    <x-input-error :messages="$errors->get('link_menu')" class="mt-2" />
-                </div>                    
             </div>
         </div><br>
         <div class="row">

@@ -58,13 +58,44 @@
         </div>
       </div>
     </div>
-    <div class="container">
+@php
+            $image_path = public_path('otros/contador.txt');        
+        if (!file_exists($image_path)){
+            touch($image_path);
+        }
+        $contenido = trim(file_get_contents($image_path));
+        # Si está vacío, lo igualamos a cero
+        if ($contenido == "") {
+            $visitas = 0;
+        } else {
+            $visitas = intval($contenido);
+        }
+        $visitas++;
+        file_put_contents($image_path, $visitas);
+@endphp
+
+
+<div class="row">
+  <div class="col">
       <div class="copyright">
         &copy; Copyright <strong><span>UGEL HUACAYBAMBA</span></strong>. Todos los derechos Reservados
       </div>
-      <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+  </div>
+  <div class="col">
+    <div class="copyright text-center">
+    VISITA NUMERO : {{$visitas}}
     </div>
+  </div>
+  <div class="col">
+    <div class="copyright text-end me-4">
+      Desarrollado por <a href="https://www.alvacor.org.pe/">ALVACOR</a>
+    </div>
+  </div>
+</div>
+
+      {{-- <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div> --}}
+
   </footer><!-- End Footer -->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

@@ -8,6 +8,8 @@ use App\Models\Noticia;
 use App\Models\Popup;
 use App\Models\Directorio;
 use App\Models\ImagenEvento;
+use App\Models\Convocatoria;
+use App\Models\ArchivoConvocatoria;
 use App\Models\Galeria;
 use Illuminate\Http\Request;
 
@@ -15,7 +17,7 @@ class HomeController extends Controller
 {
     public function __invoke(){
         //$data['galeria']=ImagenEvento::select(DB::raw('imgeventos.titulo, imgeventos.descripcion, MONTH(created_at) month, imgeventos.archivo_img'))->whereRaw('created_at BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND DATE_ADD(CURDATE(), INTERVAL 2 DAY) ORDER BY Id DESC')->get();
-        $data['registrosgaleria']=Galeria::select(DB::raw('id, titulo, descripcion, fecha_publicacion,(select archivo_img from imgeventos where idgaleria=galeria.id limit 1) as img'))->paginate(10);
+        //$data['visitas']=$visitas;
         $data['noticias']=Noticia::orderBy('fechapubli', 'desc')->take(6)->get();
         $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
@@ -35,10 +37,12 @@ class HomeController extends Controller
         $menus=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $submenus= Menu::whereNotNull('categoriamenu')->get();
         $data['director']=Directorio::where('cargo', 'DIRECTOR')->first();
-        $data['jefeagi']=Directorio::where('cargo', 'JEFE DE AGI')->first();        
+        $data['jefeagi']=Directorio::where('cargo', 'JEFE DE AGI')->first();
+        $data['jefeagp']=Directorio::where('cargo', 'Jefe de AGP')->first();
+        $data['jefeaga']=Directorio::where('cargo', 'JEFE DE AGA')->first();
         $data['menus']=$menus;
         $data['submenus']=$submenus;
-        $data['registros']=Directorio::whereNotIn('cargo' , ['DIRECTOR', 'JEFE DE AGI'])->get();
+        $data['registros']=Directorio::whereNotIn('cargo' , ['DIRECTOR', 'JEFE DE AGI', 'Jefe de AGP', 'JEFE DE AGA'])->get();
         return view('principal/directorio', $data);
     }
     public function nosotros(){
@@ -72,6 +76,25 @@ class HomeController extends Controller
         $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
         return view('principal/allnoticias', $data);
+    }
+    public function galeria(){
+        $data['registrosgaleria']=Galeria::select(DB::raw('id, titulo, descripcion, fecha_publicacion,(select archivo_img from imgeventos where idgaleria=galeria.id limit 1) as img'))->paginate(10);
+        $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
+        $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
+        return view('principal/galeria', $data);
+    }
+    public function convocatoriaweb(){
+        $data['convocatorias']=Convocatoria::where('estado', 1)->orderBy('fecha_inicio', 'desc')->paginate(10);
+        $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
+        $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
+        return view('principal/convocatorias', $data);        
+    }
+    public function verconvocatoria(Convocatoria $convocatoria){
+        $data['convocatoria']=$convocatoria;
+        $data['archivos']=ArchivoConvocatoria::where('id_convocatoria', $convocatoria->id)->orderBy('id', 'desc')->paginate(5);
+        $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
+        $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
+        return view('principal/verconvocatoria', $data);         
     }
 
 }

@@ -1,7 +1,7 @@
 @extends('principal.plantilla')
 @section('title', 'UGEL - HUACAYBAMBA')
 @section('content')
-<section id="hero" style="margin-top: 120px">
+<section id="hero" style="margin-top: 90px">
   <div id="heroCarousel" data-bs-interval="2000" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
     <div class="carousel-inner" role="listbox">
@@ -29,29 +29,6 @@
     </a>
   </div>
 </section><!-- End Hero -->
-<section class="bg-primary p-2">
-  <div class="container">
-    <div class="row content">
-      <div class="col">
-        <a href="" class="btn btn-light">
-          <i class="fa-solid fa-desktop"></i> Mesa de Partes 
-        </a>
-       
-      </div>
-      <div class="col">
-          <button class="btn btn-light">Telefono <i data-v-430fa5ae="" class="fa fa-phone-volume"></i> 936451334</button>
-      </div>
-      <div class="col">
-        <a href="" class="btn btn-light">
-          <i class="fa-regular fa-envelope"></i> Correo Institucional
-        </a>
-      </div>
-      <div class="col">
-        <a href="" class="btn btn-light"><img data-v-430fa5ae="" src="{{asset('img/otros/portal.png')}}" alt="" height="30"></a>
-      </div>
-    </div>
-  </div>
-</section>
   <main id="main">
     <section class="mt-0 pt-1">
       <div class="container">
@@ -91,26 +68,25 @@
     </section>
     <section>
       <div class="container">
-        <div class="row mt-1 text-center">
-
+        <div class="row text-center">
           <div class="col-6">
             <h2>TRAMITES Y SERVICIOS</h2>
             <br>
             <div class="row">
               <div class="col">
-                <a href="http://digital.regionhuanuco.gob.pe/" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                <a href="http://digital.regionhuanuco.gob.pe/login" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
                     <i class="fa-solid fa-boxes-packing fa-2x"></i> 
                     <p class="text-uppercase pt-3 lh-1 msb">Sistema de gestión<br>digital</p>
                 </a>              
               </div>
               <div class="col">
-                <a href="/ldirectorio" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                <a href="{{route('directorioweb')}}" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
                     <i class="fa fa-laptop fa-2x"></i> 
                     <p class="text-uppercase pt-3 lh-1 msb">Directorio<br>institucional</p>
                 </a>               
               </div>
               <div class="col">
-                <a href="http://www2.regionhuanuco.gob.pe/portal/admin/" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                <a href="{{route('intranet')}}" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
                     <i class="fa fa-cogs fa-2x"></i> 
                     <p class="text-uppercase pt-3 lh-1 msb">acceso a <br>intranet</p>
                 </a>
@@ -118,21 +94,21 @@
             </div>
             <div class="row">
               <div class="col">
-                <a href="https://drive.google.com/file/d/1gYufSyJ1ivevw9h77ooai4XgE8Qg9LGn/view?usp=sharing" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                <a href="http://127.0.0.1:8000/archivos/1674275325.pdf" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
                     <i class="fa fa-file fa-2x"></i> 
                     <p class="text-uppercase pt-3 lh-1 msb">formato único de <br> trámite</p>
                 </a>
               </div>
               <div class="col">
-                <a href="/pagina/102" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                <a href="https://www.regionhuanuco.gob.pe/pagina/102" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
                     <i class="fa fa-clipboard-list fa-2x"></i> 
                     <p class="text-uppercase pt-3 lh-1 msb">documentos de<br>gestión</p>
                 </a>
               </div>
               <div class="col">
-                <a href="/lautoridades" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                <a href="{{route('directorioweb')}}" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
                     <i class="fa fa-diagnoses fa-2x"></i> 
-                    <p class="text-uppercase pt-3 lh-1 msb">Nuestras <br>Autoridades</p>
+                    <p class="text-uppercase pt-3 lh-1 msb">Aula Virtual</p>
                 </a>
               </div>
             </div>
@@ -143,7 +119,12 @@
                     <p class="text-uppercase pt-3 lh-1 msb">Acuerdo de consejo</p>
                 </a>
               </div>
-              <div class="col"></div>
+              <div class="col">
+                <a href="{{route('galerias')}}" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                    <i class="fa-solid fa-image"></i> 
+                    <p class="text-uppercase pt-3 lh-1 msb">Galeria de Imagenes</p>
+                </a>                
+              </div>
               <div class="col">
                 <a href="/visitas" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
                     <i class="fa fa-edit fa-2x"></i> 
@@ -156,95 +137,57 @@
             <h2>VIDEOS </h2><br>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/D2TE209uRMo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
-
       </div>
       </div>
     </section>
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-        <h2>GALERIA de FOTOS</h2>
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            {{-- <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul> --}}
-          </div>
-        </div>
-
-        <div class="row portfolio-container">
-          @foreach ($registrosgaleria as $item)
-              <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                <div class="portfolio-wrap">
-                  <img src="{{asset('img/imageneventos/'.$item->img)}}" class="img-fluid" alt="">
-                  <div class="portfolio-info">
-                    <h4>{{$item->titulo}}</h4>
-                    <p>{{$item->descripcion}}</p>
-                    <div class="portfolio-links">
-                      <a href="{{asset('img/imageneventos/'.$item->img)}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$item->titulo}}"><i class="bx bx-plus"></i></a>
-                      <a href="{{route('portafoliodet', $item)}}" class="portfolio-details-lightbox" data-glightbox="type: external" title="{{$item->descripcion}}"><i class="bx bx-link"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>    
-          @endforeach
-
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
 
     <section>
       <div class="container">
-        <div class="row">
-          <div class="col">
-            <div class="text-center"><h3>ENLACES EXTERNOS</h3></div>
-            <br>
-            <div class="swiper-container swiper-multiple swiper-container-initialized swiper-container-horizontal">
-              <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-96.3333px, 0px, 0px);">
-                <div class="swiper-slide" style="width: 152.667px; margin-right: 40px;">
-                    <div class="swiper-text pt-md-1 pt-sm-50"><a href="https://apps.contraloria.gob.pe/infobras/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/Rl0wASlIqPa8n0KSJmmUtsAMY1gYWtNIEUSQgt9B.jpg" fluid=""></a></div>
+        <h2>ENLACES EXTERNOS</h2>
+        <div class="row p-2">
+          <div class="slide-container swiper">
+            <div class="slide-content">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a href="https://apps.contraloria.gob.pe/infobras/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/Rl0wASlIqPa8n0KSJmmUtsAMY1gYWtNIEUSQgt9B.jpg" fluid=""></a>
+                  </div>
+                  <div class="swiper-slide">
+                      <a href="http://www.inei.gob.pe/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/DDNODNEQNFsAt3EMCzY1S6cQvD9jLNjndlJ351k1.jpg" fluid=""></a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="http://www.indeci.gob.pe/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/PHqi2tTALhG6H8QYeua069m44rqiuZ2Q7kLPZ8GT.jpg" fluid=""></a>
+                  </div>
+                  <div class="swiper-slide">
+                      <a href="http://www.iiap.org.pe/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/UoQ9u7im8qgWFWF1uwL56v0C4HA7aRI5aA0GkJZb.jpg" fluid=""></a>
+                  </div>
+                  <div class="swiper-slide">
+                      <a href="http://www.fondep.gob.pe/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/y52Bu1jI8r2DaZgNfjoGT76qipbObt6jsrozh9gC.jpg" fluid=""></a>
+                  </div>
+                  <div class="swiper-slide">
+                      <a href="http://www.sanciones.gob.pe/transparencia/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/WVrTo4iCjeMMiwGJTkBWbwwfE8IkWzUSKaYIYEnY.jpg" fluid=""></a>
+                  </div>
+                  <div class="swiper-slide">
+                      <a href="http://www.pronied.gob.pe/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/Q6O0CZV3iBUhOrgDB8V4UlHLJg4kfD7krhuUOqh7.png" fluid=""></a>
+                  </div>
+                  <div class="swiper-slide">
+                      <a href="http://casillas.pj.gob.pe/redamWeb/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/ScLbFiqMHPxarakb9NhjFCuhsiS3dv9gQcQnH7Gn.jpg" fluid=""></a>
+                  </div>
+                  <div class="swiper-slide">
+                      <a href="http://www.midis.gob.pe/sellomunicipal/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/WeHBa7I37i0hA4ZyZ10oyAcMo1Lxo3q7iVcTXM4E.jpg" fluid=""></a>
+                  </div>
+                  <div class="swiper-slide">
+                      <a href="http://www.osce.gob.pe/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/upcQRia9CpKnwAfo0cuXwGcN9YW1duRD7r87FumW.jpg" fluid=""></a>
+                  </div>
+                  <div class="swiper-slide">
+                      <a href="http://www.mef.gob.pe/index.php?option=com_content&amp;view=section&amp;id=28&amp;Itemid=100674&amp;lang=es" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/ZxRFtujmE0zAu9ewhJWACYUN3aQhxB48qo66FLRj.jpg" fluid=""></a>
+                  </div>
                 </div>
-                <div class="swiper-slide" style="width: 152.667px; margin-right: 40px;">
-                    <div class="swiper-text pt-md-1 pt-sm-50"><a href="http://www.inei.gob.pe/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/DDNODNEQNFsAt3EMCzY1S6cQvD9jLNjndlJ351k1.jpg" fluid=""></a></div>
-                </div>
-                <div class="swiper-slide swiper-slide-prev" style="width: 152.667px; margin-right: 40px;">
-                    <div class="swiper-text pt-md-1 pt-sm-50"><a href="http://www.indeci.gob.pe/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/PHqi2tTALhG6H8QYeua069m44rqiuZ2Q7kLPZ8GT.jpg" fluid=""></a></div>
-                </div>
-                <div class="swiper-slide swiper-slide-active" style="width: 152.667px; margin-right: 40px;">
-                    <div class="swiper-text pt-md-1 pt-sm-50"><a href="http://www.iiap.org.pe/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/UoQ9u7im8qgWFWF1uwL56v0C4HA7aRI5aA0GkJZb.jpg" fluid=""></a></div>
-                </div>
-                <div class="swiper-slide swiper-slide-next" style="width: 152.667px; margin-right: 40px;">
-                    <div class="swiper-text pt-md-1 pt-sm-50"><a href="http://www.fondep.gob.pe/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/y52Bu1jI8r2DaZgNfjoGT76qipbObt6jsrozh9gC.jpg" fluid=""></a></div>
-                </div>
-                <div class="swiper-slide" style="width: 152.667px; margin-right: 40px;">
-                    <div class="swiper-text pt-md-1 pt-sm-50"><a href="http://www.sanciones.gob.pe/transparencia/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/WVrTo4iCjeMMiwGJTkBWbwwfE8IkWzUSKaYIYEnY.jpg" fluid=""></a></div>
-                </div>
-                <div class="swiper-slide" style="width: 152.667px; margin-right: 40px;">
-                    <div class="swiper-text pt-md-1 pt-sm-50"><a href="http://www.pronied.gob.pe/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/Q6O0CZV3iBUhOrgDB8V4UlHLJg4kfD7krhuUOqh7.png" fluid=""></a></div>
-                </div>
-                <div class="swiper-slide" style="width: 152.667px; margin-right: 40px;">
-                    <div class="swiper-text pt-md-1 pt-sm-50"><a href="http://casillas.pj.gob.pe/redamWeb/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/ScLbFiqMHPxarakb9NhjFCuhsiS3dv9gQcQnH7Gn.jpg" fluid=""></a></div>
-                </div>
-                <div class="swiper-slide" style="width: 152.667px; margin-right: 40px;">
-                    <div class="swiper-text pt-md-1 pt-sm-50"><a href="http://www.midis.gob.pe/sellomunicipal/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/WeHBa7I37i0hA4ZyZ10oyAcMo1Lxo3q7iVcTXM4E.jpg" fluid=""></a></div>
-                </div>
-                <div class="swiper-slide" style="width: 152.667px; margin-right: 40px;">
-                    <div class="swiper-text pt-md-1 pt-sm-50"><a href="http://www.osce.gob.pe/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/upcQRia9CpKnwAfo0cuXwGcN9YW1duRD7r87FumW.jpg" fluid=""></a></div>
-                </div>
-                <div class="swiper-slide" style="width: 152.667px; margin-right: 40px;">
-                    <div class="swiper-text pt-md-1 pt-sm-50"><a href="http://www.mef.gob.pe/index.php?option=com_content&amp;view=section&amp;id=28&amp;Itemid=100674&amp;lang=es" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/ZxRFtujmE0zAu9ewhJWACYUN3aQhxB48qo66FLRj.jpg" fluid=""></a></div>
-                </div>
-              </div>
-              {{-- <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="false"></div>
-              <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div> --}}
-              <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
             </div>
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
           </div>
+
         </div>
       </div>
     </section>

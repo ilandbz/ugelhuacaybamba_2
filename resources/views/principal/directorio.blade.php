@@ -75,6 +75,42 @@
         </div>
     </div>
     <div class="row">
+      <div class="col">
+          <div class="card mb-3 text-dark bg-light" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('img/fotos/'.$jefeagp->foto)}}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">{{$jefeagp->cargo}}</h5>
+                    <p class="card-text">{{$jefeagp->apenom}}</p>
+                    <p class="card-text"><small class="text-muted">{{$jefeagp->email}}</small></p>
+                    <p class="card-text"><small class="text-muted">Cel: {{$jefeagp->celular}}</small></p>
+                  </div>
+                </div>
+              </div>
+          </div> 
+      </div>
+      <div class="col">
+          <div class="card mb-3 text-dark bg-light" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="{{asset('img/fotos/'.$jefeaga->foto)}}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">{{$jefeaga->cargo}}</h5>
+                    <p class="card-text">{{$jefeaga->apenom}}</p>
+                    <p class="card-text"><small class="text-muted">{{$jefeaga->email}}</small></p>
+                    <p class="card-text"><small class="text-muted">Cel: {{$jefeaga->celular}}</small></p>
+                  </div>
+                </div>
+              </div>
+          </div> 
+      </div>
+  </div>
+    <div class="row">
         <br>
         <div class="col">
             <table class="table table-hover">

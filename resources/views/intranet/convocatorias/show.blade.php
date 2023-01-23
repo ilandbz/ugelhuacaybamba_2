@@ -2,28 +2,28 @@
     <x-slot name="header">
         <h2><i class="far fa-clone"></i> Convocatoria</h2>
     </x-slot>
-    <h1 class="tx-primary">{{ $convocatoria->titulo }}</h1>
+    <h2 class="tx-primary">{{ $convocatoria->tipo.': '.$convocatoria->titulo }}</h2>
     <?= $convocatoria->descripcion ?>
     <div class="row tx-primary">
         <div class="col">
-            <h2>FECHA INICIO<br><small>{{$convocatoria->fecha_inicio}}</small></h2>
+            <h3>FECHA INICIO<br><small>{{$convocatoria->fecha_inicio}}</small></h3>
         </div>
         <div class="col">
-            <h2>FECHA TERMINO<br><small>{{$convocatoria->fecha_termino}}</small></h2>
+            <h3>FECHA TERMINO<br><small>{{$convocatoria->fecha_termino}}</small></h3>
         </div>
         <div class="col">
-            <h2>FIN DE INSCRIPCION<br><small>{{$convocatoria->fecha_fin_inscripcion}}</small></h2>
+            <h3>FIN DE INSCRIPCION<br><small>{{$convocatoria->fecha_fin_inscripcion}}</small></h3>
         </div>
     </div>
     <div class="row tx-primary">
         <div class="col">
-            <h2>FECHA PUBLICACION RESULTADOS<br><small>{{$convocatoria->fecha_resultados}}</small></h2>
+            <h3>FECHA PUBLICACION RESULTADOS<br><small>{{$convocatoria->fecha_resultados}}</small></h3>
         </div>
         <div class="col">
-            <h2>FECHA TERMINO<br><small>{{$convocatoria->fecha_termino}}</small></h2>
+            <h3>FECHA TERMINO<br><small>{{$convocatoria->fecha_termino}}</small></h3>
         </div>
         <div class="col">
-            <h2>ESTADO<br><small>{{$convocatoria->estado}}</small></h2>
+            <h3>ESTADO<br><small>{{$convocatoria->estado}}</small></h3>
         </div>       
     </div>
     <div class="row">

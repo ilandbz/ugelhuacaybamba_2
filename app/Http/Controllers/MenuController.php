@@ -22,13 +22,13 @@ class MenuController extends Controller
         $idpagina = 1+Pagina::select('id')->max('id');
         $menu = new Menu();
         $pagina = new pagina();
-        if($request->link_menu!='#'){
-            $request->link_menu='pagina'.$idpagina;
+        if($request->link_menu!='#' && $request->link_menu==''){//SE ESTA CREANDO UNA PAGINA
+            $request->link_menu='http://127.0.0.1:8000/menus/paginaweb/'.$idpagina;
+            $pagina->id=$idpagina;
+            $pagina->nom_pagina=$request->nom_pagina;
+            $pagina->cont_pagina=$request->cont_pagina;
+            $pagina->save();           
         }
-        $pagina->id=$idpagina;
-        $pagina->nom_pagina=$request->nom_pagina;
-        $pagina->cont_pagina=$request->cont_pagina;
-        $pagina->save();
         $menu->nom_menu = $request->nom_menu;
         $menu->link_menu = $request->link_menu;
         $menu->activo_menu = 1;
@@ -56,7 +56,7 @@ class MenuController extends Controller
     public function update(Request $request, Menu $menu){
         $pagina=new Pagina();
         $menu->nom_menu=$request->nom_menu;
-        $menu->link_menu = $request->link_menu;
+
         $menu->activo_menu = $request->activo_menu;
         if($request->categoriamenu==''){
             $menu->categoriamenu = null; 
@@ -64,10 +64,10 @@ class MenuController extends Controller
             $menu->categoriamenu = $request->categoriamenu; 
         }   
         if($menu->link_menu=='#'){//si no tubo paginas web
-            if($request->link_menu!='#'){//existe registro de pagina web nueva pagina web
+            if($request->link_menu!='#' && $request->link_menu==''){//existe registro de pagina web nueva pagina web crear nueva pagina
                 $idpagina = 1+Pagina::select('id')->max('id');
                 if($request->link_menu!='#'){
-                    $request->link_menu='pagina'.$idpagina;
+                    $request->link_menu='http://127.0.0.1:8000/menus/paginaweb/'.$idpagina;
                 }
                 $pagina->id=$idpagina;
                 $pagina->nom_pagina=$request->nom_pagina;
@@ -86,6 +86,7 @@ class MenuController extends Controller
                 $menu->idpagina=null;
             }
         }
+        $menu->link_menu = $request->link_menu;
         $menu->save();
         return redirect()->route('formregistro');
     }

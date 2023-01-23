@@ -4,9 +4,23 @@
         <h2><i class="far fa-clone"></i> CONVOCATORIAS
     </x-slot>
     <h6 class="br-section-label">Editar</h6>
-    <form action="{{ route('convocatoria.store') }}" method="POST">
+    <form action="{{ route('convocatoria.update', $convocatoria) }}" method="POST">
         @csrf
+        @method('put')
         <div class="row mg-b-25">
+            <div class="col">
+                <div class="form-group">
+                    <label class="form-control-label" for="tipo">TIPO: <span class="tx-danger">*</span></label>
+                    <select name="tipo" id="tipo" class="form-control">
+                        <option value="CAS" {{$convocatoria->tipo=='CAS' ? 'selected' : ''}}>CAS</option>
+                        <option value="CAP" {{$convocatoria->tipo=='CAP' ? 'selected' : ''}}>CAP</option>
+                        <option value="DOCENTE" {{$convocatoria->tipo=='DOCENTE' ? 'selected' : ''}}>DOCENTE</option>
+                        <option value="DIRECTIVO" {{$convocatoria->tipo=='DIRECTIVO' ? 'selected' : ''}}>DIRECTIVO</option>
+                        <option value="REASIGNACION" {{$convocatoria->tipo=='REASIGNACION' ? 'selected' : ''}}>REASIGNACION</option>
+                    </select>
+                    <x-input-error :messages="$errors->get('tipo')" class="mt-2" />
+                </div>
+            </div>
             <div class="col-4">
                 <div class="form-group">
                     <label class="form-control-label" for="titulo">Titulo: <span class="tx-danger">*</span></label>

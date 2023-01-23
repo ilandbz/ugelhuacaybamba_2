@@ -10,6 +10,7 @@ use App\Http\Controllers\PopupController;
 use App\Http\Controllers\DirectorioController;
 use App\Http\Controllers\ConvocatoriaController;
 use App\Http\Controllers\ImagenEventoController;
+use App\Http\Controllers\ComunicadoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,11 @@ Route::get('/mision', [HomeController::class, 'mision'])->name('mision');
 Route::get('/vision', [HomeController::class, 'vision'])->name('vision');
 Route::get('/portafoliodet/{galeria}', [HomeController::class, 'portafoliodet'])->name('portafoliodet');
 Route::get('/allnoticias', [HomeController::class, 'allnoticias'])->name('allnoticias');
+Route::get('/galeriaimagenes', [HomeController::class, 'galeria'])->name('galerias');
+Route::get('/convocatoriaweb', [HomeController::class, 'convocatoriaweb'])->name('convocatoriaweb');
+Route::get('/verconvocatoria/{convocatoria}', [HomeController::class, 'verconvocatoria'])->name('verconvocatoria');
+
+
 Route::controller(MenuController::class)->group(function(){
     Route::get('menus', 'index')->name('menu');
     Route::get('menus/edit/{menu}', 'edit')->middleware(['auth', 'verified'])->name('menu.edit');    
@@ -77,6 +83,15 @@ Route::controller(PopupController::class)->group(function(){
     Route::get('popup/edit/{popup}', 'edit')->middleware(['auth', 'verified'])->name('popup.edit');
     Route::put('popup/update/{popup}', 'update')->middleware(['auth', 'verified'])->name('popup.update');
     Route::get('popup/show/{popup}', 'show')->middleware(['auth', 'verified'])->name('show');
+});
+Route::controller(ComunicadoController::class)->group(function(){
+    Route::get('comunicado', 'index')->middleware(['auth', 'verified'])->name('comunicado');
+    Route::get('comunicado/create', 'create')->middleware(['auth', 'verified'])->name('comunicado.create');    
+    Route::post('comunicado/store', 'store')->middleware(['auth', 'verified'])->name('comunicado.store');
+    Route::get('comunicado/{comunicado}', 'destroy')->middleware(['auth', 'verified'])->name('comunicado.destroy');
+    Route::get('comunicado/edit/{comunicado}', 'edit')->middleware(['auth', 'verified'])->name('comunicado.edit');
+    Route::put('comunicado/update/{comunicado}', 'update')->middleware(['auth', 'verified'])->name('comunicado.update');
+    Route::get('comunicado/show/{comunicado}', 'show')->middleware(['auth', 'verified'])->name('comunicado.show');
 });
 Route::controller(DirectorioController::class)->group(function(){
     Route::get('directorio', 'index')->middleware(['auth', 'verified'])->name('directorio');

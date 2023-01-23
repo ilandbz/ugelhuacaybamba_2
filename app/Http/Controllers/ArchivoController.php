@@ -19,7 +19,10 @@ class ArchivoController extends Controller
             $filename = time().'.'.$file->extension();
             $archivo->link=$filename;
             $file->move(public_path('archivos'), $filename);   
+        }else{
+            echo 'NO SUBIO EL ARCHIVO';
         }
+
         $archivo->save();
         return redirect()->route('archivo');
     }

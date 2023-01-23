@@ -16,6 +16,7 @@ class ConvocatoriaController extends Controller
     }
     public function store(Request $request){
         $convocatoria = new Convocatoria();
+        $convocatoria->tipo = $request->tipo;
         $convocatoria->titulo = $request->titulo;
         $convocatoria->descripcion = $request->descripcion;
         $convocatoria->fecha_inicio = $request->fecha_inicio;
@@ -32,6 +33,17 @@ class ConvocatoriaController extends Controller
     public function edit(Convocatoria $convocatoria){
         $data['convocatoria']=$convocatoria;
         return view('intranet/convocatorias/edit', $data);
+    }
+    public function update(Convocatoria $convocatoria, Request $request){
+        $convocatoria->tipo = $request->tipo;
+        $convocatoria->titulo = $request->titulo;
+        $convocatoria->descripcion = $request->descripcion;
+        $convocatoria->fecha_inicio = $request->fecha_inicio;
+        $convocatoria->fecha_termino = $request->fecha_termino;
+        $convocatoria->fecha_fin_inscripcion = $request->fecha_fin_inscripcion;
+        $convocatoria->fecha_resultados = $request->fecha_resultados;
+        $convocatoria->save();
+        return redirect()->route('convocatoria');
     }
     public function show(Convocatoria $convocatoria){
         $data['convocatoria']=$convocatoria;

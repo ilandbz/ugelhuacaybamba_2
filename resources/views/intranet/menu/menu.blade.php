@@ -41,7 +41,17 @@
                 </div>
                 <input type="hidden" name="activo_menu" value="{{$menu->activo_menu}}">
             </div>
-        </div><!-- row -->
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group">
+                    <label class="form-control-label" for="link_menu">Link: <span class="tx-danger">*</span></label>
+                    <input class="form-control" type="text" name="link_menu" id="link_menu" value="<?= $menu->link_menu ?>" placeholder="Link Menu">
+                    <x-input-error :messages="$errors->get('link_menu')" class="mt-2" />
+                
+                </div>                 
+            </div>
+        </div>
         <div class="row">
             <?php if($menu->link_menu!='#'){ ?>
             <div class="col-md-12" id="contenidopagina">
@@ -53,7 +63,7 @@
             </div>                
             <?php }else{ ?> 
             <div class="col-md-12 d-none" id="contenidopagina">
-                <input type="text" name="idpagina" value="">
+                <input type="hidden" name="idpagina" value="">
                 <label class="form-control-label">Nombre Pagina: </label>
                 <input class="form-control" type="text" name="nom_pagina" id="nom_pagina" :value="old('nom_pagina')" placeholder="">
                 <label class="form-control-label">Contenido: </label>
@@ -61,11 +71,7 @@
             </div> 
             <?php } ?>
             <div class="col-md-4 d-none">
-                <div class="form-group">
-                    <label class="form-control-label" for="link_menu">Link: <span class="tx-danger">*</span></label>
-                    <input class="form-control" type="text" name="link_menu" id="link_menu" value="<?= $menu->link_menu ?>" placeholder="Link Menu">
-                    <x-input-error :messages="$errors->get('link_menu')" class="mt-2" />
-                </div>                    
+                   
             </div>
         </div><br>
         <div class="row">
