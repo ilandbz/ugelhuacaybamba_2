@@ -16,6 +16,7 @@ class ComunicadoController extends Controller
     public function store(Request $request){
         $comunicado = new Comunicado();
         $comunicado->titulo=$request->titulo;
+        $comunicado->url=$request->url;
         if($request->hasFile('imagen')){
             $file = $request->file('imagen');
             $filename = time().$file->extension();
@@ -31,6 +32,7 @@ class ComunicadoController extends Controller
     }
     public function update(Comunicado $comunicado, Request $request){
         $comunicado->titulo = $request->titulo;
+        $comunicado->url = $request->url;
         if($request->hasFile('imagen')){
             $file = $request->file('imagen');
             $image_path = public_path('img/comunicados/').$comunicado->imagen; 

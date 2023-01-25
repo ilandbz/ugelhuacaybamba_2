@@ -140,7 +140,52 @@
       </div>
       </div>
     </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col" align="right">
+            <h3>COMUNICADOS</h3><br>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                @foreach ($comunicados as $item)
+                <div class="carousel-item active">
+                  <img src="{{asset('img/comunicados/'.$item->imagen)}}" class="d-block w-100" width="" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>{{$item->titulo}}</h5>
+                    @if ($item->url!='' && $item->url!=null)
+                        <a target="_blank" href="{{$item->url}}" title="Ver Mas"><i class="fa-solid fa-eye"></i></a>
+                    @endif
+                  </div>
+                </div>            
+                @endforeach
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
 
+            </div><br>
+            <a href="{{route('comunicadosall')}}" class="btn btn-primary btn-sm">
+              Ver más
+              <i aria-hidden="true" class="fas fa-arrow-circle-right"></i></a>
+          </div>
+          <div class="col-6">
+            <h3>POST FACEBOOK</h3>
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FUE307HUACAYBAMBA%2Fposts%2Fpfbid0CCEWaHvsBqESf9LNCPkxsmzESexJE51bVkMDKUEyi4WufBrGWMu9bbPyrSWhqbS9l&show_text=true&width=500" width="500" height="387" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
     <section>
       <div class="container">
         <h2>ENLACES EXTERNOS</h2>

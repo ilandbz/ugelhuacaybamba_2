@@ -34,6 +34,7 @@ Route::get('/allnoticias', [HomeController::class, 'allnoticias'])->name('allnot
 Route::get('/galeriaimagenes', [HomeController::class, 'galeria'])->name('galerias');
 Route::get('/convocatoriaweb', [HomeController::class, 'convocatoriaweb'])->name('convocatoriaweb');
 Route::get('/verconvocatoria/{convocatoria}', [HomeController::class, 'verconvocatoria'])->name('verconvocatoria');
+Route::get('/comunicadosall', [HomeController::class, 'comunicadosall'])->name('comunicadosall');
 
 
 Route::controller(MenuController::class)->group(function(){

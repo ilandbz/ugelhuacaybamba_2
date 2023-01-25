@@ -47,7 +47,7 @@
   <script src="{{ asset('plantillas/Sailor/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
   <script src="{{ asset('plantillas/Sailor/assets/vendor/waypoints/noframework.waypoints.js')}}"></script>
   <script src="{{ asset('plantillas/Sailor/assets/vendor/php-email-form/validate.js')}}"></script>
-  <script src="{{ asset('plantillas/Sailor/assets/vendor/bootstrap/bootstrap.min.js')}}"></script>
+  <script src="{{ asset('plantillas/Sailor/assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
   <!-- Template Main JS File -->
   <script src="{{ asset('plantillas/Sailor/assets/js/main.js')}}"></script>
   <script src="{{ asset('js/miscript.js')}}"></script>

@@ -139,3 +139,37 @@
 .msb{
   font-size: .875rem!important;
 }
+
+
+/* estilo convocatoria */
+.elementor-20645 .elementor-element.elementor-element-19aa2fb:not(.elementor-motion-effects-element-type-background) > .elementor-column-wrap, .elementor-20645 .elementor-element.elementor-element-19aa2fb > .elementor-column-wrap > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-color: #ffffff;
+}
+
+.elementor-20645 .elementor-element.elementor-element-19aa2fb > .elementor-element-populated {
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  padding: 0px 0px 0px 0px;
+}
+.elementor-20645 .elementor-element.elementor-element-19aa2fb > .elementor-element-populated, .elementor-20645 .elementor-element.elementor-element-19aa2fb > .elementor-element-populated > .elementor-background-overlay, .elementor-20645 .elementor-element.elementor-element-19aa2fb > .elementor-background-slideshow {
+  border-radius: 10px 10px 10px 10px;
+}
+.elementor-column-wrap {
+  width: 100%;
+}
+.elementor *, .elementor :after, .elementor :before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.elementor-20645 .elementor-element.elementor-element-43dae21 .elementor-icon-list-text {
+  color: #ffffff;
+  padding-left: 39px;
+}
+.elementor-widget-icon-list .elementor-icon-list-item > .elementor-icon-list-text, .elementor-widget-icon-list .elementor-icon-list-item > a {
+  font-family: var( --e-global-typography-text-font-family ), Sans-serif;
+  font-weight: var( --e-global-typography-text-font-weight );
+}
+.elementor-icon-list-items .elementor-icon-list-item .elementor-icon-list-text {
+  display: inline-block;
+}

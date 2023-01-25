@@ -20,25 +20,25 @@
               </div>
             </div>
           </div>
+
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+          <h4>LO MAS BUSCADO</h4>            
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://127.0.0.1:8000/menus/paginaweb/14">Nosotros</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{route('convocatoriaweb')}}">Convocatoria CAS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">SGD</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Aulas Virtuales</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{route('allnoticias')}}">Notas de Prensa</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{route('comunicadosall')}}">Comunicados</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{route('galerias')}}">Galeria</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Agenda Director</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="http://127.0.0.1:8000/menus/paginaweb/24">Resoluciones</a></li>
             </ul>
           </div>
 

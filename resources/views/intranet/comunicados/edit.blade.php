@@ -14,7 +14,7 @@
                     <x-input-error :messages="$errors->get('titulo')" class="mt-2" />
                 </div>
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-4">
                 <div class="form-group">
                     <label class="form-control-label" for="inputGroupFile2">IMAGEN: </label>
                     <div class="input-group mb-3">
@@ -28,8 +28,12 @@
                     </div>
                 </div>
             </div><!-- col-4 -->
-            <div class="col-lg-3">
-               
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label class="form-control-label" for="url">URL: <span class="tx-danger">*</span></label>
+                    <input class="form-control" type="text" name="url" id="url" value="{{$comunicado->url}}" placeholder="URL">
+                    <x-input-error :messages="$errors->get('url')" class="mt-2" />
+                </div>
             </div><!-- col-4 -->
         </div><!-- row -->
         <div class="row">

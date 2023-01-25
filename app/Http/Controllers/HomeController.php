@@ -10,6 +10,7 @@ use App\Models\Directorio;
 use App\Models\ImagenEvento;
 use App\Models\Convocatoria;
 use App\Models\ArchivoConvocatoria;
+use App\Models\Comunicado;
 use App\Models\Galeria;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,7 @@ class HomeController extends Controller
     public function __invoke(){
         //$data['galeria']=ImagenEvento::select(DB::raw('imgeventos.titulo, imgeventos.descripcion, MONTH(created_at) month, imgeventos.archivo_img'))->whereRaw('created_at BETWEEN DATE_SUB(CURDATE(), INTERVAL 2 MONTH) AND DATE_ADD(CURDATE(), INTERVAL 2 DAY) ORDER BY Id DESC')->get();
         //$data['visitas']=$visitas;
+        $data['comunicados']=Comunicado::orderBy('created_at', 'desc')->take(10)->get();
         $data['noticias']=Noticia::orderBy('fechapubli', 'desc')->take(6)->get();
         $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
@@ -84,10 +86,26 @@ class HomeController extends Controller
         return view('principal/galeria', $data);
     }
     public function convocatoriaweb(){
-        $data['convocatorias']=Convocatoria::where('estado', 1)->orderBy('fecha_inicio', 'desc')->paginate(10);
+        $convocatorias=Convocatoria::where('estado', 1)->orderBy('id', 'desc')->take(5)->get();
+        foreach($convocatorias as $row){
+            $archivoconvocatoria = ArchivoConvocatoria::where('id_convocatoria', $row->id)->get();
+            $archivo=[];
+            foreach($archivoconvocatoria as $arch)
+            {
+                array_push($archivo, [
+                    'id_convocatoria' => $arch->id_convocatoria,
+                    'nom_archivo' => $arch->nom_archivo,
+                    'url_archivo' => $arch->url_archivo,
+                    'etapa' => $arch->etapa
+                ]);
+            }
+            $row['archivos'] = $archivo;
+        }
+
+        //$data['convocatorias']=$convocatorias;
         $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
-        return view('principal/convocatorias', $data);        
+        return view('principal/convocatorias', $data);  
     }
     public function verconvocatoria(Convocatoria $convocatoria){
         $data['convocatoria']=$convocatoria;
@@ -95,6 +113,12 @@ class HomeController extends Controller
         $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
         return view('principal/verconvocatoria', $data);         
+    }
+    public function comunicadosall(){
+        $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
+        $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
+        $data['comunicados']=Comunicado::orderBy('created_at', 'desc')->take(10)->get();
+        return view('principal/comunicados', $data);          
     }
 
 }
