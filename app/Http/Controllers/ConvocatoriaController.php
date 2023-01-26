@@ -21,8 +21,6 @@ class ConvocatoriaController extends Controller
         $convocatoria->descripcion = $request->descripcion;
         $convocatoria->fecha_inicio = $request->fecha_inicio;
         $convocatoria->fecha_termino = $request->fecha_termino;
-        $convocatoria->fecha_fin_inscripcion = $request->fecha_fin_inscripcion;
-        $convocatoria->fecha_resultados = $request->fecha_resultados;
         $convocatoria->save();
         return redirect()->route('convocatoria');
     }
@@ -40,8 +38,6 @@ class ConvocatoriaController extends Controller
         $convocatoria->descripcion = $request->descripcion;
         $convocatoria->fecha_inicio = $request->fecha_inicio;
         $convocatoria->fecha_termino = $request->fecha_termino;
-        $convocatoria->fecha_fin_inscripcion = $request->fecha_fin_inscripcion;
-        $convocatoria->fecha_resultados = $request->fecha_resultados;
         $convocatoria->estado = $request->estado;
         $convocatoria->save();
         return redirect()->route('convocatoria');

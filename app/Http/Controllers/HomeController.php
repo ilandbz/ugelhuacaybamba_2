@@ -86,23 +86,22 @@ class HomeController extends Controller
         return view('principal/galeria', $data);
     }
     public function convocatoriaweb(){
-        $convocatorias=Convocatoria::where('estado', 1)->orderBy('id', 'desc')->take(5)->get();
+        $convocatorias=Convocatoria::where('es_activo', 1)->orderBy('id', 'desc')->paginate(10);
         foreach($convocatorias as $row){
             $archivoconvocatoria = ArchivoConvocatoria::where('id_convocatoria', $row->id)->get();
-            $archivo=[];
-            foreach($archivoconvocatoria as $arch)
-            {
-                array_push($archivo, [
-                    'id_convocatoria' => $arch->id_convocatoria,
-                    'nom_archivo' => $arch->nom_archivo,
-                    'url_archivo' => $arch->url_archivo,
-                    'etapa' => $arch->etapa
-                ]);
-            }
-            $row['archivos'] = $archivo;
+            // $archivo=[];
+            // foreach($archivoconvocatoria as $arch)
+            // {
+            //     array_push($archivo, [
+            //         'id_convocatoria' => $arch->id_convocatoria,
+            //         'nom_archivo' => $arch->nom_archivo,
+            //         'url_archivo' => $arch->url_archivo,
+            //         'etapa' => $arch->etapa
+            //     ]);
+            // }
+            $row['archivos'] = $archivoconvocatoria;
         }
-
-        //$data['convocatorias']=$convocatorias;
+        $data['convocatorias']=$convocatorias;
         $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
         return view('principal/convocatorias', $data);  

@@ -40,10 +40,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="form-group">
-                    <label class="form-control-label" for="fecha_fin_inscripcion">Fin de Inscripcion : <span class="tx-danger">*</span></label>
-                    <input type="date" name="fecha_fin_inscripcion" id="fecha_fin_inscripcion" value="{{date('Y-m-d')}}" class="form-control">                
-                </div>
+
             </div>            
         </div><!-- row -->
         <div class="row">
@@ -54,10 +51,7 @@
                 </div>                
             </div>
             <div class="col">
-                <div class="form-group">
-                    <label class="form-control-label" for="fecha_resultados">Fecha Resultados : <span class="tx-danger">*</span></label>
-                    <input type="date" name="fecha_resultados" id="fecha_resultados" value="{{date('Y-m-d')}}" class="form-control">                
-                </div>
+
             </div>   
 
         </div>

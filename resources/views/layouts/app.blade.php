@@ -99,8 +99,16 @@
                     $('input[name=estado]').val('1'); 
                 }
                 $(this).toggleClass('on');
-            })              
-            
+            })         
+            $('#br-toggle4').on('click', function(e){
+                e.preventDefault();
+                if($('input[name=es_activo]').val()=='1'){
+                    $('input[name=es_activo]').val('0'); 
+                }else{
+                    $('input[name=es_activo]').val('1'); 
+                }
+                $(this).toggleClass('on');
+            })                
             });
             
           </script>

@@ -23,7 +23,7 @@
                     <td class="border border-slate-500">{{ $item->titulo }}</td>
                     <td class="border border-slate-500">{{ $item->fecha_inicio }}</td>
                     <td class="border border-slate-500">{{ $item->fecha_termino }}</td>
-                    <td class="border border-slate-500">{{ $item->estado==1 ? 'ACTIVO' : 'INACTIVO' }}</td>
+                    <td class="border border-slate-500">{{ $item->estado }}</td>
                     <td class="border border-slate-500">
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <a href="{{ route('convocatoria.destroy', $item->id) }}" class="btn btn-danger btn-sm eliminar" title="Eliminar"><i class="fas fa-trash"></i></a>

@@ -41,10 +41,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="form-group">
-                    <label class="form-control-label" for="fecha_fin_inscripcion" title="Fecha fin de Inscripcion">Inscripcion : <span class="tx-danger">*</span></label>
-                    <input type="date" name="fecha_fin_inscripcion" id="fecha_fin_inscripcion" value="{{$convocatoria->fecha_fin_inscripcion}}" class="form-control">                
-                </div>
+
             </div>            
         </div><!-- row -->
         <div class="row">
@@ -56,15 +53,17 @@
             </div>
             <div class="col">
                 <div class="form-group">
-                    <label class="form-control-label" for="fecha_resultados">Fecha Resultados : <span class="tx-danger">*</span></label>
-                    <input type="date" name="fecha_resultados" id="fecha_resultados" value="{{$convocatoria->fecha_resultados}}" class="form-control">                
-                </div>
-            </div>   
-            <div class="col">
-                <div class="form-group">
                     <label class="form-control-label" for="estado">Estado : <span class="tx-danger">*</span></label>
                     <input type="text" name="estado" id="estado" value="{{$convocatoria->estado}}" class="form-control">                
-                </div>                
+                </div> 
+            </div>   
+            <div class="col">
+                <label class="form-control-label">Activo: <span class="tx-danger">*</span></label>
+                <br>
+                <div id="br-toggle4" class="br-toggle br-toggle-rounded br-toggle-success {{ $convocatoria->es_activo=='1' ? 'on' : '' }}">
+                    <div class="br-toggle-switch"></div>
+                </div>
+                <input type="hidden" name="es_activo" value="{{$convocatoria->es_activo}}">
             </div>
         </div>
         <div class="row">
