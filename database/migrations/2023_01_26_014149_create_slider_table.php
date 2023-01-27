@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('img_slider', 30);
             $table->unsignedTinyInteger('activo_slider')->default(1);
             $table->string('descripcioncorta');
-            $table->string('link', 55);
+            $table->string('link');
             $table->timestamps();
         });
     }

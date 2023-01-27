@@ -55,11 +55,11 @@
         <div class="row">
             <?php if($menu->link_menu!='#'){ ?>
             <div class="col-md-12" id="contenidopagina">
-                <input type="hidden" name="idpagina" value="{{$pagina->id}}">
+                <input type="hidden" name="idpagina" value="{{isset($pagina) ? $pagina->id : ''}}">
                 <label class="form-control-label">Nombre Pagina: </label>
-                <input class="form-control" type="text" name="nom_pagina" id="nom_pagina" value="{{ $pagina->nom_pagina }}" placeholder="">
+                <input class="form-control" type="text" name="nom_pagina" id="nom_pagina" value="{{ isset($pagina) ? $pagina->nom_pagina : ''}}" placeholder="">
                 <label class="form-control-label">Contenido: </label>
-                <textarea rows="8" class="form-control is-valid mg-t-20" name="cont_pagina" id="mysummernote">{{$pagina->cont_pagina}}</textarea>
+                <textarea rows="8" class="form-control is-valid mg-t-20" name="cont_pagina" id="mysummernote">{{ isset($pagina) ? $pagina->cont_pagina : ''}}</textarea>
             </div>                
             <?php }else{ ?> 
             <div class="col-md-12 d-none" id="contenidopagina">
@@ -68,7 +68,7 @@
                 <input class="form-control" type="text" name="nom_pagina" id="nom_pagina" :value="old('nom_pagina')" placeholder="">
                 <label class="form-control-label">Contenido: </label>
                 <textarea rows="8" class="form-control is-valid mg-t-20" name="cont_pagina" id="mysummernote" placeholder="Textarea (success state)"></textarea>
-            </div> 
+            </div>
             <?php } ?>
             <div class="col-md-4 d-none">
                    

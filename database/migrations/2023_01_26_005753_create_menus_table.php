@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('menu', function (Blueprint $table) {
+        Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->string('nom_menu', 35)->unique();
-            $table->string('link_menu', 35);
+            $table->string('link_menu', 90);
             $table->unsignedTinyInteger('activo_menu')->default(1);
-            $table->foreignId('idpagina')->nullable()->constrained('pagina')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('categoriamenu');
             $table->timestamps();
+            $table->foreignId('idpagina')->nullable()->constrained('pagina')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->integer('categoriamenu')->nullable();         
         });
     }
 
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('menu');
+        Schema::dropIfExists('menus');
     }
 };
