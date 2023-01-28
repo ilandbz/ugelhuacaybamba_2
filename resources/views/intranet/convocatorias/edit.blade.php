@@ -13,10 +13,11 @@
                     <label class="form-control-label" for="tipo">TIPO: <span class="tx-danger">*</span></label>
                     <select name="tipo" id="tipo" class="form-control">
                         <option value="CAS" {{$convocatoria->tipo=='CAS' ? 'selected' : ''}}>CAS</option>
-                        <option value="CAP" {{$convocatoria->tipo=='CAP' ? 'selected' : ''}}>CAP</option>
+                        <option value="276" {{$convocatoria->tipo=='276' ? 'selected' : ''}}>276</option>
                         <option value="DOCENTE" {{$convocatoria->tipo=='DOCENTE' ? 'selected' : ''}}>DOCENTE</option>
                         <option value="DIRECTIVO" {{$convocatoria->tipo=='DIRECTIVO' ? 'selected' : ''}}>DIRECTIVO</option>
                         <option value="REASIGNACION" {{$convocatoria->tipo=='REASIGNACION' ? 'selected' : ''}}>REASIGNACION</option>
+                        <option value="PRACTICANTE" {{$convocatoria->tipo=='PRACTICANTE' ? 'selected' : ''}}>PRACTICANTE</option>
                     </select>
                     <x-input-error :messages="$errors->get('tipo')" class="mt-2" />
                 </div>

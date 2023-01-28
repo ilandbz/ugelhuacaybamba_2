@@ -32,7 +32,7 @@ Route::get('/vision', [HomeController::class, 'vision'])->name('vision');
 Route::get('/portafoliodet/{galeria}', [HomeController::class, 'portafoliodet'])->name('portafoliodet');
 Route::get('/allnoticias', [HomeController::class, 'allnoticias'])->name('allnoticias');
 Route::get('/galeriaimagenes', [HomeController::class, 'galeria'])->name('galerias');
-Route::get('/convocatoriaweb', [HomeController::class, 'convocatoriaweb'])->name('convocatoriaweb');
+Route::get('/convocatoriaweb/{tipo}', [HomeController::class, 'convocatoriaweb'])->name('convocatoriaweb');
 Route::get('/verconvocatoria/{convocatoria}', [HomeController::class, 'verconvocatoria'])->name('verconvocatoria');
 Route::get('/comunicadosall', [HomeController::class, 'comunicadosall'])->name('comunicadosall');
 

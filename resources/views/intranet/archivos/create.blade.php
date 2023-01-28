@@ -31,6 +31,8 @@
                     <option value="Solicitud">Solicitud</option>
                     <option value="Oficio">Oficio</option>
                     <option value="Resolucion">Resolucion</option>
+                    <option value="Convocatorias">Convocatorias</option>
+                    <option value="Otros">Otros</option>
                 </select>
                 </div>
             </div><!-- col-4 -->

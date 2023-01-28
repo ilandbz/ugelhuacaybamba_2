@@ -29,7 +29,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <label class="form-control-label" for="inputGroupFile1">IMAGEN: </label>
+                <label class="form-control-label" for="inputGroupFile1">IMAGEN: <span class="tx-danger">500px de Ancho</span></label>
                 <div class="input-group mb-3">
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="inputGroupFile1" name="imagen">

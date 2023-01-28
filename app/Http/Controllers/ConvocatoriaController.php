@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ConvocatoriaController extends Controller
 {
     public function index(){
-        $data['convocatorias']=Convocatoria::orderBy('fecha_inicio', 'desc')->paginate(10);
+        $data['convocatorias']=Convocatoria::orderBy('fecha_inicio', 'desc')->paginate(5);
         return view('intranet/convocatorias/inicio', $data);
     }
     public function create(){

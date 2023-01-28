@@ -4,7 +4,7 @@
 <main id="main">
 <section id="about" class="about" style="margin-top: 90px">
   <div class="container">
-    <h2>CONVOCATORIAS</h2><br>
+    <h2>CONVOCATORIAS {{$tipo}}</h2><br>
 
         @foreach ($convocatorias as $row)
         {{-- @php

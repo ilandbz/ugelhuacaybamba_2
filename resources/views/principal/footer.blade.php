@@ -26,7 +26,7 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="http://127.0.0.1:8000/menus/paginaweb/14">Nosotros</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{route('convocatoriaweb')}}">Convocatoria CAS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{route('convocatoriaweb', 'CAS')}}">Convocatoria CAS</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">SGD</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Aulas Virtuales</a></li>
             </ul>
@@ -48,7 +48,7 @@
               </div>
               <div id="block-9" class="widget widget_block widget_media_gallery">
                  <figure class="wp-container-2 wp-block-gallery-1 wp-block-gallery has-nested-images columns-default is-cropped">
-                    <figure class="wp-block-image size-full"><a href="https://reclamos.servicios.gob.pe/?institution_id=67"><img loading="lazy" width="383" height="148" data-id="2720" src="https://dreh.drehuanuco.edu.pe/wp-content/uploads/2022/08/libo-1.png" alt="" class="wp-image-2720" srcset="https://drehuanuco.gob.pe/wp-content/uploads/2022/08/libo-1.png 383w, https://drehuanuco.gob.pe/wp-content/uploads/2022/08/libo-1-300x116.png 300w" sizes="(max-width: 383px) 100vw, 383px"></a></figure>
+                    <figure class="wp-block-image size-full"><a href="https://reclamos.servicios.gob.pe/?institution_id=67"><img loading="lazy" width="383" height="148" data-id="2720" src="{{asset('img/reclamaciones.jpg')}}" alt="" class="wp-image-2720" srcset="{{asset('img/reclamaciones.jpg')}} 383w, https://drehuanuco.gob.pe/wp-content/uploads/2022/08/libo-1-300x116.png 300w" sizes="(max-width: 383px) 100vw, 383px"></a></figure>
                  </figure>
               </div>
               <div id="block-12" class="widget widget_block widget_text">

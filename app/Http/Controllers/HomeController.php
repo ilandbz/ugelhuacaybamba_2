@@ -85,8 +85,8 @@ class HomeController extends Controller
         $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
         return view('principal/galeria', $data);
     }
-    public function convocatoriaweb(){
-        $convocatorias=Convocatoria::where('es_activo', 1)->orderBy('id', 'desc')->paginate(10);
+    public function convocatoriaweb($tipo){
+        $convocatorias=Convocatoria::where('es_activo', 1)->where('tipo', $tipo)->orderBy('id', 'desc')->paginate(10);
         foreach($convocatorias as $row){
             $archivoconvocatoria = ArchivoConvocatoria::where('id_convocatoria', $row->id)->get();
             // $archivo=[];
@@ -101,6 +101,7 @@ class HomeController extends Controller
             // }
             $row['archivos'] = $archivoconvocatoria;
         }
+        $data['tipo']=$tipo;
         $data['convocatorias']=$convocatorias;
         $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $data['submenus']=Menu::whereNotNull('categoriamenu')->get();

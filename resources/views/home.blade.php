@@ -30,7 +30,7 @@
   </div>
 </section><!-- End Hero -->
   <main id="main">
-    <section class="mt-0 pt-1">
+    <section class="mt-3 pt-1">
       <div class="container">
         <div class="row p-2" style="background: url(img/rayaazul.svg), rgb(207, 226, 255); border-radius: 4px;">
           <div class="slide-container swiper">
@@ -66,9 +66,9 @@
         </div>
       </div>
     </section>
-    <section>
+    <section class="pt-0">
       <div class="container">
-        <div class="row text-center">
+        <div class="row text-center" style="background: url(img/rayaazul.svg), rgb(207, 226, 255); border-radius: 4px;">
           <div class="col-6">
             <h2>TRAMITES Y SERVICIOS</h2>
             <br>
@@ -114,9 +114,9 @@
             </div>
             <div class="row">
               <div class="col">
-                <a href="/lnormatividad/Acuerdo de Consejo/2016" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
+                <a href="https://miboletasc.minedu.gob.pe/Account/Login" target="_blank" class="btn btn-block btn-outline-primary boton shadow anima_btn m-2 p-2">
                     <i class="fa fa-clipboard-check fa-2x"></i> 
-                    <p class="text-uppercase pt-3 lh-1 msb">Acuerdo de consejo</p>
+                    <p class="text-uppercase pt-3 lh-1 msb">Mi boleta</p>
                 </a>
               </div>
               <div class="col">
@@ -140,8 +140,8 @@
       </div>
       </div>
     </section>
-    <section>
-      <div class="container">
+    <section class="pt-0">
+      <div class="container" style="background: url(img/rayaazul.svg), rgb(207, 226, 255); border-radius: 4px;">
         <div class="row">
           <div class="col" align="right">
             <h3>COMUNICADOS</h3><br>
@@ -187,41 +187,43 @@
       </div>
     </section>
     <section>
-      <div class="container">
+      <div class="container" style="background: url(img/rayaazul.svg), rgb(207, 226, 255); border-radius: 4px;">
         <h2>ENLACES EXTERNOS</h2>
-        <div class="row p-2">
+        <div class="row">
           <div class="slide-container swiper">
             <div class="slide-content">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <a href="https://apps.contraloria.gob.pe/infobras/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/Rl0wASlIqPa8n0KSJmmUtsAMY1gYWtNIEUSQgt9B.jpg" fluid=""></a>
+                  <div class="swiper-slide" style="padding: 0px; margin: 0px">
+                    <a href="https://apps.contraloria.gob.pe/infobras/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/Rl0wASlIqPa8n0KSJmmUtsAMY1gYWtNIEUSQgt9B.jpg" fluid=""></a>
                   </div>
                   <div class="swiper-slide">
-                      <a href="http://www.inei.gob.pe/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/DDNODNEQNFsAt3EMCzY1S6cQvD9jLNjndlJ351k1.jpg" fluid=""></a>
+                      <a href="http://www.inei.gob.pe/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/DDNODNEQNFsAt3EMCzY1S6cQvD9jLNjndlJ351k1.jpg" fluid=""></a>
+                      <a href="http://www.inei.gob.pe/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/DDNODNEQNFsAt3EMCzY1S6cQvD9jLNjndlJ351k1.jpg" fluid=""></a>
+                      <a href="http://www.inei.gob.pe/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/DDNODNEQNFsAt3EMCzY1S6cQvD9jLNjndlJ351k1.jpg" fluid=""></a>
                   </div>
                   <div class="swiper-slide">
-                    <a href="http://www.indeci.gob.pe/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/PHqi2tTALhG6H8QYeua069m44rqiuZ2Q7kLPZ8GT.jpg" fluid=""></a>
+                    <a href="http://www.indeci.gob.pe/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/PHqi2tTALhG6H8QYeua069m44rqiuZ2Q7kLPZ8GT.jpg" fluid=""></a>
                   </div>
                   <div class="swiper-slide">
-                      <a href="http://www.iiap.org.pe/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/UoQ9u7im8qgWFWF1uwL56v0C4HA7aRI5aA0GkJZb.jpg" fluid=""></a>
+                      <a href="http://www.iiap.org.pe/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/UoQ9u7im8qgWFWF1uwL56v0C4HA7aRI5aA0GkJZb.jpg" fluid=""></a>
                   </div>
                   <div class="swiper-slide">
-                      <a href="http://www.fondep.gob.pe/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/y52Bu1jI8r2DaZgNfjoGT76qipbObt6jsrozh9gC.jpg" fluid=""></a>
+                      <a href="http://www.fondep.gob.pe/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/y52Bu1jI8r2DaZgNfjoGT76qipbObt6jsrozh9gC.jpg" fluid=""></a>
                   </div>
                   <div class="swiper-slide">
-                      <a href="http://www.sanciones.gob.pe/transparencia/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/WVrTo4iCjeMMiwGJTkBWbwwfE8IkWzUSKaYIYEnY.jpg" fluid=""></a>
+                      <a href="http://www.sanciones.gob.pe/transparencia/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/WVrTo4iCjeMMiwGJTkBWbwwfE8IkWzUSKaYIYEnY.jpg" fluid=""></a>
                   </div>
                   <div class="swiper-slide">
-                      <a href="http://www.pronied.gob.pe/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/Q6O0CZV3iBUhOrgDB8V4UlHLJg4kfD7krhuUOqh7.png" fluid=""></a>
+                      <a href="http://www.pronied.gob.pe/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/Q6O0CZV3iBUhOrgDB8V4UlHLJg4kfD7krhuUOqh7.png" fluid=""></a>
                   </div>
                   <div class="swiper-slide">
-                      <a href="http://casillas.pj.gob.pe/redamWeb/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/ScLbFiqMHPxarakb9NhjFCuhsiS3dv9gQcQnH7Gn.jpg" fluid=""></a>
+                      <a href="http://casillas.pj.gob.pe/redamWeb/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/ScLbFiqMHPxarakb9NhjFCuhsiS3dv9gQcQnH7Gn.jpg" fluid=""></a>
                   </div>
                   <div class="swiper-slide">
-                      <a href="http://www.midis.gob.pe/sellomunicipal/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/WeHBa7I37i0hA4ZyZ10oyAcMo1Lxo3q7iVcTXM4E.jpg" fluid=""></a>
+                      <a href="http://www.midis.gob.pe/sellomunicipal/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/WeHBa7I37i0hA4ZyZ10oyAcMo1Lxo3q7iVcTXM4E.jpg" fluid=""></a>
                   </div>
                   <div class="swiper-slide">
-                      <a href="http://www.osce.gob.pe/" target=""><img class="img-fluid" src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/upcQRia9CpKnwAfo0cuXwGcN9YW1duRD7r87FumW.jpg" fluid=""></a>
+                      <a href="http://www.osce.gob.pe/" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/upcQRia9CpKnwAfo0cuXwGcN9YW1duRD7r87FumW.jpg" fluid=""></a>
                   </div>
                   <div class="swiper-slide">
                       <a href="http://www.mef.gob.pe/index.php?option=com_content&amp;view=section&amp;id=28&amp;Itemid=100674&amp;lang=es" target=""><img src="http://gestionportales.regionhuanuco.gob.pe/storage/enlaceref/ZxRFtujmE0zAu9ewhJWACYUN3aQhxB48qo66FLRj.jpg" fluid=""></a>
@@ -238,22 +240,14 @@
     </section>
   </main><!-- End #main -->
   <?php if(isset($popup->titulopopup)){ ?>
-  <div class="modal modal-lg fade" id="modalpopup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modalpopup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">{{$popup->titulopopup}}</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-content p-0">
+        <div class="modal-header p-0">
+          <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">X</button>
         </div>
-        <div class="modal-body">
-          <?= $popup->contenido;
-          $image_path = public_path('img/popup/').$popup->imagen; 
-          if (file_exists($image_path)){  ?>    
-              <img src="{{asset('img/popup/'.$popup->imagen)}}" class="img-fluid img-thumbnail" />
-          <?php } ?>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <div class="modal-body p-0" title="{{$popup->titulo}}">
+            <img alt="{{$popup->titulo}}" src="{{asset('img/popup/'.$popup->imagen)}}" class="img-fluid img-thumbnail" />
         </div>
       </div>
     </div>

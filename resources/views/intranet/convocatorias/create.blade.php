@@ -12,10 +12,11 @@
                     <label class="form-control-label" for="tipo">TIPO: <span class="tx-danger">*</span></label>
                     <select name="tipo" id="tipo" class="form-control">
                         <option value="CAS">CAS</option>
-                        <option value="CAP">CAP</option>
+                        <option value="276">276</option>
                         <option value="DOCENTE">DOCENTE</option>
                         <option value="DIRECTIVO">DIRECTIVO</option>
                         <option value="REASIGNACION">REASIGNACION</option>
+                        <option value="PRACTICANTE">PRACTICANTE</option>
                     </select>
                     <x-input-error :messages="$errors->get('tipo')" class="mt-2" />
                 </div>
