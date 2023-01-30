@@ -12,6 +12,8 @@ use App\Models\Convocatoria;
 use App\Models\ArchivoConvocatoria;
 use App\Models\Comunicado;
 use App\Models\Galeria;
+use App\Models\Documentogestion;
+use App\Models\Archivodocumentogestion;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -52,21 +54,21 @@ class HomeController extends Controller
         $submenus= Menu::whereNotNull('categoriamenu')->get();
         $data['menus']=$menus;
         $data['submenus']=$submenus;
-        return view('principal/nosotros', $data);        
+        return view('principal/nosotros', $data);
     }
     public function mision(){
         $menus=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $submenus= Menu::whereNotNull('categoriamenu')->get();
         $data['menus']=$menus;
         $data['submenus']=$submenus;
-        return view('principal/mision', $data);        
+        return view('principal/mision', $data);
     }
     public function vision(){
         $menus=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $submenus= Menu::whereNotNull('categoriamenu')->get();
         $data['menus']=$menus;
         $data['submenus']=$submenus;
-        return view('principal/vision', $data);        
+        return view('principal/vision', $data);
     }
     public function portafoliodet(Galeria $galeria){
         $data['imagenes']=ImagenEvento::where('idgaleria', $galeria->id)->take(10)->get();
@@ -105,20 +107,32 @@ class HomeController extends Controller
         $data['convocatorias']=$convocatorias;
         $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
-        return view('principal/convocatorias', $data);  
+        return view('principal/convocatorias', $data);
     }
     public function verconvocatoria(Convocatoria $convocatoria){
         $data['convocatoria']=$convocatoria;
         $data['archivos']=ArchivoConvocatoria::where('id_convocatoria', $convocatoria->id)->orderBy('id', 'desc')->paginate(5);
         $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
-        return view('principal/verconvocatoria', $data);         
+        return view('principal/verconvocatoria', $data);
     }
     public function comunicadosall(){
         $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
         $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
         $data['comunicados']=Comunicado::orderBy('created_at', 'desc')->take(10)->get();
-        return view('principal/comunicados', $data);          
+        return view('principal/comunicados', $data);
+    }
+    public function documentosdegestionweb(){
+        $data['menus']=Menu::where('activo_menu', 1)->whereNull('categoriamenu')->get();
+        $data['submenus']=Menu::whereNotNull('categoriamenu')->get();
+        $data['comunicados']=Comunicado::orderBy('created_at', 'desc')->take(10)->get();
+        $registros=Documentogestion::orderBy('id', 'asc')->get();
+        foreach($registros as $row){
+            $archivoconvocatoria = Archivodocumentogestion::where('id_documentogestion', $row->id)->get();
+            $row['archivos'] = $archivoconvocatoria;
+        }
+        $data['registros']=$registros;
+        return view('principal/documentosdegestionweb', $data);
     }
 
 }

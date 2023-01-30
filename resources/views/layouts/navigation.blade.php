@@ -98,7 +98,16 @@
                     <li class="sub-item"><a href="{{route('comunicado')}}" class="sub-link">Administrar</a></li>
                     <li class="sub-item"><a href="{{route('comunicado.create')}}" class="sub-link">Nueva</a></li>
                 </ul>
-            </li>            
+            </li>
+            <li class="br-menu-item">
+                <a href="#" class="br-menu-link with-sub">
+                  <i class="menu-item-icon icon ion-ios-list-outline tx-22"></i>
+                  <span class="menu-item-label">Documento de Gestion</span>
+                </a><!-- br-menu-link -->
+                <ul class="br-menu-sub nav flex-column">
+                    <li class="sub-item"><a href="{{route('Documentogestion')}}" class="sub-link">Administrar</a></li>
+                </ul>
+            </li>
         </ul><!-- br-sideleft-menu -->
         <br>
         </div><!-- br-sideleft -->
@@ -127,7 +136,7 @@
                             @csrf
                             <a href="{{route('logout')}}" onclick="event.preventDefault();
                             this.closest('form').submit();"><i class="icon ion-power"></i> {{ __('Cerrar Session') }}</a>
-                        </form>                    
+                        </form>
                     </li>
 
                 </ul>
