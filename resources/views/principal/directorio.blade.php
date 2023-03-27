@@ -54,7 +54,7 @@
                     </div>
                   </div>
                 </div>
-            </div> 
+            </div>
         </div>
         <div class="col">
             <div class="card mb-3 text-dark bg-light" style="max-width: 540px;">
@@ -71,7 +71,7 @@
                     </div>
                   </div>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
     <div class="row">
@@ -90,7 +90,7 @@
                   </div>
                 </div>
               </div>
-          </div> 
+          </div>
       </div>
       <div class="col">
           <div class="card mb-3 text-dark bg-light" style="max-width: 540px;">
@@ -107,48 +107,48 @@
                   </div>
                 </div>
               </div>
-          </div> 
+          </div>
       </div>
   </div>
     <div class="row">
         <br>
         <div class="col">
-            <table class="table table-hover">
+            <table class="table table-hover bg-info">
                 <thead>
                     <tr>
-                        <th class="border border-slate-500">ID</th>
-                        <th class="border border-slate-500" width="30%">Apellidos y Nombres</th>
-                        <th class="border border-slate-500">FOTO</th>
-                        <th class="border border-slate-500">DNI</th>
-                        <th class="border border-slate-500">Area</th>
-                        <th class="border border-slate-500">Cargo</th>
-                        <th class="border border-slate-500">Email</th>
-                        <th class="border border-slate-500">Celular</th>
+                        <th class="">ID</th>
+                        <th class="" width="30%">Apellidos y Nombres</th>
+                        <th class="">FOTO</th>
+                        <th class="">DNI</th>
+                        <th class="">Area</th>
+                        <th class="">Cargo</th>
+                        <th class="">Email</th>
+                        <th class="">Celular</th>
                     </tr>
                 </thead>
                 <tbody>
                 @foreach ($registros as $item)
                 <tr>
-                    <td class="border border-slate-500">{{ $item->id }}</td>
-                    <td class="border border-slate-500">{{ $item->apenom }}</td>
-                    <td class="border border-slate-500">
+                    <td class="">{{ $item->id }}</td>
+                    <td class="">{{ $item->apenom }}</td>
+                    <td class="">
                         <?php
-                        $image_path = public_path('img/fotos/').$item->foto; 
+                        $image_path = public_path('img/fotos/').$item->foto;
                         if (file_exists($image_path)){  ?>
                         <div class="col">
                             <img src="{{asset('img/fotos/'.$item->foto)}}" class="img-fluid img-thumbnail" width="100" />
                         </div>
                         <?php } ?>
                     </td>
-                    <td class="border border-slate-500">{{ $item->dni }}</td>
-                    <td class="border border-slate-500">{{ $item->area }}</td>
-                    <td class="border border-slate-500">{{ $item->cargo }}</td>
-                    <td class="border border-slate-500">{{ $item->email }}</td>
-                    <td class="border border-slate-500">{{ $item->celular }}</td>                                                          
+                    <td class="">{{ $item->dni }}</td>
+                    <td class="">{{ $item->area }}</td>
+                    <td class="">{{ $item->cargo }}</td>
+                    <td class="">{{ $item->email }}</td>
+                    <td class="">{{ $item->celular }}</td>
                 </tr>
                 </tbody>
                 @endforeach
-            </table>            
+            </table>
         </div>
     </div>
 
